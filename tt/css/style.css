@@ -1,0 +1,24 @@
+body { font: 14px Tahoma, sans-serif; }
+a { text-decoration: none; color: #05f; }
+.is-hidden { display: none; }
+
+/* tooltip */
+.tt { cursor: help; border-bottom: 2px dotted #000; }
+.tt-wrap { position: relative; }
+.tt-content {
+	color: #fff; font-size: 75%;
+	position: absolute;
+	left: -10px; top: 25px;
+	width: 150px; padding: 10px 15px;
+	background: rgba(20, 20, 20, 0.6);
+	display: none;
+}
+.tt-content:before {
+	content: '';
+	position: absolute;
+	top: -14px; left: 7px;
+	border: 7px solid transparent;
+	border-bottom-color: rgba(20, 20, 20, 0.6);
+}
+.tt-wrap:hover .tt-content { display: block; }
+.tt-title { display: block; margin-bottom: 3px; font-size: 1.1em; }
