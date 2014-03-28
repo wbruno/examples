@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+
+<style>
+.rt90 {
+    -webkit-transform: perspective(100px) rotate(90deg);
+       -moz-transform: perspective(100px) rotate(90deg);
+            transform: perspective(100px) rotate(90deg);
+}
+.rt180 {
+    -webkit-transform: perspective(100px) rotate(180deg);
+       -moz-transform: perspective(100px) rotate(180deg);
+            transform: perspective(100px) rotate(180deg);
+}
+.rt270 {
+    -webkit-transform: perspective(100px) rotate(270deg);
+       -moz-transform: perspective(100px) rotate(270deg);
+            transform: perspective(100px) rotate(270deg);
+}
+.rt0 {
+    -webkit-transform: perspective(100px) rotate(0deg);
+       -moz-transform: perspective(100px) rotate(0deg);
+            transform: perspective(100px) rotate(0deg);
+}
+</style>
+</head>
+<body>
+
+<img src="gatinho.jpg" alt="" id="img">
+
+<input type="button" id="btn" value="rotate" />
+
+<script>
+(function(){
+    var $img = document.getElementById("img"),
+        $btn = document.getElementById("btn"),
+        classes = ["rt90","rt180","rt270","rt0"],
+        i = 0,
+        max = classes.length;
+
+    $btn.addEventListener("click", function(){
+        $img.classList.remove("rt90","rt180","rt270","rt0");
+        $img.classList.add(classes[i]);
+        i = i < max - 1 ? i + 1 : 0;
+    });
+}());
+</script>
+</body>
+</html>
