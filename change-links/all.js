@@ -3,12 +3,12 @@ jQuery(document).ready(function(){
         $text = jQuery("#text");
 
     $btn.on("click", function(){
-        var text = $text.val().replace(/&/g, '__AMP__');
+        var text = $text.val();
 
         jQuery.ajax({
             url: "process.php",
             type: "POST",
-            data: "text=" + text,
+            data: {"text" : text },
             success: function(data){
                 $text.val(data);
             }
