@@ -13,7 +13,7 @@ function maskLink($link) {
     return 'http://site.com.br/?redirect='.md5($link);
 }
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    $text = getPost('text');
+    $text = str_replace('__AMP__', '&', getPost('text'));
 
     $ret = preg_replace_callback(
         '/href="([^"]+)"/',

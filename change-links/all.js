@@ -3,7 +3,7 @@ jQuery(document).ready(function(){
         $text = jQuery("#text");
 
     $btn.on("click", function(){
-        var text = $text.val();
+        var text = $text.val().replace(/&/g, '__AMP__');
 
         jQuery.ajax({
             url: "process.php",
