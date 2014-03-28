@@ -68,15 +68,17 @@ a { text-decoration: none; }
 
 #slider {
     margin: 0 auto;
-    width: 4050px;
+    width: 100%;
     position: absolute; top: 0; left: 0;
     transition: all 1.5s;
 }
 #slider-inner {
     position: relative;
     width: 100%;
-    max-width: 1350px; margin: 0 auto;
+    margin: 0 auto;
 }
+#slider-inner li { width: 100%; }
+#slider-inner li > img { width: 100%; }
 .slider-control {
     position: absolute;
     top: 200px;
