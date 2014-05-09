@@ -1,0 +1,24 @@
+<html>
+<head>
+    <meta charset="utf8" />
+</head>
+<body>
+    <input type="checkbox" id="Aprendizagem_e_crescimento" value="Aprendizagem e crescimento" name="perspectiva[]" />Aprendizagem<br />
+    <input type="checkbox" id="Outra" value="Outra" name="perspectiva[]" />Outra<br />
+    <input type="checkbox" id="Clientes" value="Clientes" name="perspectiva[]" />Clientes<br />
+    <input type="checkbox" id="Foo" value="Foo" name="perspectiva[]" />Foo<br />
+    <input type="checkbox" id="Bar" value="Bar" name="perspectiva[]" />Bar<br />
+    <input type="checkbox" id="Financeira" value="Financeira" name="perspectiva[]" />Financeira
+
+
+<script type="text/javascript" src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+<script type="text/javascript">
+var json = {"perspectiva":"Financeira; Clientes; Aprendizagem e crescimento"},
+    arr = json.perspectiva.split('; ');
+
+arr.forEach(function(each){
+    $("input[name='perspectiva[]'][value='"+each+"']").attr("checked", "checked");
+})
+</script>
+</body>
+</html>
