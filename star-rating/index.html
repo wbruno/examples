@@ -1,0 +1,122 @@
+<html>
+<head>
+<style type="text/css">
+* { margin: 0; padding: 0; list-style: none; }
+.stars {
+  width: 100px;
+  height: 20px;
+  margin: 5px auto 0 auto;
+}
+#produtos .stars li {
+  background: url('star_groups.jpg') no-repeat;
+  display: block;
+  height: 20px;
+  width: 20px;
+  cursor: pointer;
+  float: left;
+}
+#produtos .stars li.active {
+  background-position: left -45px;
+}
+#produtos {
+  width: 450px;
+  margin: 20px auto 0 auto;
+}
+#produtos li {
+  float: left;
+  width: 150px;
+  height: 200px;
+  color: #1B57A3;
+  text-align: center;
+}
+#produtos p {
+  text-decoration: underline;
+  font: 12px Arial, Verdana, sans-serif;
+}
+#sql {
+  font: bold 20px Arial;
+  color: #f00;
+  text-align: center;
+  clear: both;
+}
+</style>
+ 
+</head>
+<body>
+  <ul id="produtos">
+    <li>
+      <img src="MacBook.jpg" alt="" />
+      <p>MacBook</p>
+      <ol class="stars"><li></li><li></li><li></li><li></li><li></li></ol>
+      <input type="hidden" name="id_produto[]" value="15" />
+    </li>
+    <li>
+      <img src="iMac.jpg" alt="" />
+      <p>iMac</p>
+      <ol class="stars"><li></li><li></li><li></li><li></li><li></li></ol>
+      <input type="hidden" name="id_produto[]" value="12" />
+    </li>
+    <li>
+      <img src="iPhone.jpg" alt="" />
+      <p>iPhone</p>
+      <ol class="stars"><li></li><li></li><li></li><li></li><li></li></ol>
+      <input type="hidden" name="id_produto[]" value="5" />
+    </li>
+ 
+    <li>
+      <img src="iPod_Nano.jpg" alt="" />
+      <p>iPod Nano</p>
+      <ol class="stars"><li></li><li></li><li></li><li></li><li></li></ol>
+      <input type="hidden" name="id_produto[]" value="7" />
+    </li>
+    <li>
+      <img src="iPod_Classic.jpg" alt="" />
+      <p>iPod Classic</p>
+      <ol class="stars"><li></li><li></li><li></li><li></li><li></li></ol>
+      <input type="hidden" name="id_produto[]" value="9" />
+    </li>
+    <li>
+      <img src="HP_LP3065.jpg" alt="" />
+      <p>HP_LP3065</p>
+      <ol class="stars"><li></li><li></li><li></li><li></li><li></li></ol>
+      <input type="hidden" name="id_produto[]" value="22" />
+    </li>
+  </ul><!-- /produtos -->
+ 
+  <div id="sql"></div>
+
+<script type="text/javascript" src="http://code.jquery.com/jquery-1.6.1.min.js"></script>
+<script type="text/javascript">
+$(document).ready(function(){
+  $('.stars li').click(function(){
+    var $this = $( this );
+    var ol = $this.parent('ol');
+    var rating = $this.index()+1;
+    var id_produto = ol.parent('li').find("input[name='id_produto[]']").val();
+ 
+ 
+    if( $this.hasClass('active') && !$this.next('li').hasClass('active') ){
+      $( ol ).find('li').removeClass('active');
+      rating = 0;
+    }
+    else{
+      $( ol ).find('li').removeClass('active');
+      for( var i=0; i<rating; i++ ){
+        $( ol ).find('li').eq( i ).addClass('active');
+      };
+    }
+ 
+    $.ajax({
+      type: "POST",
+      url: "retorno-votacao.php",
+      data: "id_produto="+id_produto+"&voto="+rating,
+      success: function( data ){
+        $('#sql').html( data );
+      }
+    });
+  });
+});
+</script>
+
+</body>
+</html>
