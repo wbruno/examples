@@ -1,0 +1,70 @@
+<html>
+<head>
+
+</head>
+<body>
+
+<fieldset id="curso1">
+  <legend>Curso 1</legend>
+  <label><input type="radio" name="curso1" value="opt1" /> 1</label>
+  <label><input type="radio" name="curso1" value="opt2" /> 2</label>
+  <label><input type="radio" name="curso1" value="opt3" /> 3</label>
+  <label><input type="radio" name="curso1" value="opt4" /> 4</label>
+</fieldset>
+
+<fieldset id="curso2">
+  <legend>Curso 2</legend>
+  <label><input type="radio" name="curso2" value="opt1" /> 1</label>
+  <label><input type="radio" name="curso2" value="opt2" /> 2</label>
+  <label><input type="radio" name="curso2" value="opt3" /> 3</label>
+  <label><input type="radio" name="curso2" value="opt4" /> 4</label>
+</fieldset>
+
+<fieldset id="curso3">
+  <legend>Curso 3</legend>
+  <label><input type="radio" name="curso3" value="opt1" /> 1</label>
+  <label><input type="radio" name="curso3" value="opt2" /> 2</label>
+  <label><input type="radio" name="curso3" value="opt3" /> 3</label>
+  <label><input type="radio" name="curso3" value="opt4" /> 4</label>
+</fieldset>
+
+<fieldset id="curso4">
+  <legend>Curso 3</legend>
+  <label><input type="radio" name="curso4" value="opt1" /> 1</label>
+  <label><input type="radio" name="curso4" value="opt2" /> 2</label>
+  <label><input type="radio" name="curso4" value="opt3" /> 3</label>
+  <label><input type="radio" name="curso4" value="opt4" /> 4</label>
+</fieldset>
+
+<script>
+(function(){
+  function disable_all($elements) {
+    var $elements = [].slice.call($elements);
+    $elements.forEach(function($each){
+      if (!$each.checked)
+        $each.setAttribute("disabled", "disabled");
+    });
+  }
+  function disable_all_of_same_value(value) {
+    var $radios = document.querySelectorAll("input[type='radio'][value='" + value + "']");
+    disable_all($radios);
+  }
+  function disable_all_of_same_class(fieldset) {
+    var $radios = fieldset.querySelectorAll("input[type='radio']");
+    disable_all($radios);
+  }
+
+  var $radios = document.querySelectorAll("input[type='radio']");
+  $radios = [].slice.call($radios);
+
+  $radios.forEach(function($each){
+    $each.addEventListener("click", function(){
+      disable_all_of_same_value(this.value);
+      disable_all_of_same_class(this.parentNode.parentNode);
+    });
+  });
+
+}());
+</script>
+</body>
+</html>
