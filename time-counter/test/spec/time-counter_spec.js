@@ -1,3 +1,9 @@
+/**
+ * @author William Bruno
+ * @date 2014-09-01
+ * @github https://github.com/wbruno/examples/tree/gh-pages/time-counter
+ */
+
 describe("TimeCounter", function() {
 
   describe("_getDateEnd", function() {

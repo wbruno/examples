@@ -1,3 +1,9 @@
+/**
+ * @author William Bruno
+ * @date 2014-09-01
+ * @github https://github.com/wbruno/examples/tree/gh-pages/time-counter
+ */
+
 function _getDateEnd ($element) {
   var dataEnd = $element.getAttribute('data-end').split('-'),
       date = new Date(dataEnd[0], dataEnd[1]-1, dataEnd[2], dataEnd[3], dataEnd[4], dataEnd[5]);
