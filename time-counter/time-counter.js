@@ -1,9 +1,11 @@
 function _getDateEnd ($element) {
-  var date = $element.getAttribute('data-end').split('-');
-  return new Date(date[0], date[1]-1, date[2], date[3], date[4], date[5]);
+  var dataEnd = $element.getAttribute('data-end').split('-'),
+      date = new Date(dataEnd[0], dataEnd[1]-1, dataEnd[2], dataEnd[3], dataEnd[4], dataEnd[5]);
+
+  return !isNaN(date) ? date : new Date();
 }
 
-function _timePad(n) {
+function _timePad (n) {
   return n < 10 ? '0' + n : n;
 }
 
@@ -36,6 +38,6 @@ function _timeLeft (now, end) {
 
 function timeCounter ($elements) {
   $elements.forEach(function ($each) {
-    $each.innerHTML = _timeLeft(new Date(), new _getDateEnd($each));
+    $each.innerHTML = _timeLeft(new Date(), _getDateEnd($each));
   });
 }
