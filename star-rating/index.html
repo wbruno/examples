@@ -40,7 +40,7 @@
   clear: both;
 }
 </style>
- 
+
 </head>
 <body>
   <ul id="produtos">
@@ -62,7 +62,7 @@
       <ol class="stars"><li></li><li></li><li></li><li></li><li></li></ol>
       <input type="hidden" name="id_produto[]" value="5" />
     </li>
- 
+
     <li>
       <img src="iPod_Nano.jpg" alt="" />
       <p>iPod Nano</p>
@@ -82,7 +82,7 @@
       <input type="hidden" name="id_produto[]" value="22" />
     </li>
   </ul><!-- /produtos -->
- 
+
   <div id="sql"></div>
 
 <script type="text/javascript" src="http://code.jquery.com/jquery-1.6.1.min.js"></script>
@@ -93,8 +93,8 @@ $(document).ready(function(){
     var ol = $this.parent('ol');
     var rating = $this.index()+1;
     var id_produto = ol.parent('li').find("input[name='id_produto[]']").val();
- 
- 
+
+
     if( $this.hasClass('active') && !$this.next('li').hasClass('active') ){
       $( ol ).find('li').removeClass('active');
       rating = 0;
@@ -105,7 +105,7 @@ $(document).ready(function(){
         $( ol ).find('li').eq( i ).addClass('active');
       };
     }
- 
+
     $.ajax({
       type: "POST",
       url: "retorno-votacao.php",
