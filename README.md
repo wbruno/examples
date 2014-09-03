@@ -10,3 +10,5 @@ Snippets of codes made by wbruno
 * [rotate](http://wbruno.github.io/examples/rotate/)
 * [show-hide](http://wbruno.github.io/examples/show-hide/)
 * [time-counter](http://wbruno.github.io/examples/time-counter/)
+* [yt-iframe-api](http://wbruno.github.io/examples/yt-iframe-api/)
+

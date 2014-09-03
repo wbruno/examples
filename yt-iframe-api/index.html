@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Youtube iFrame API</title>
+</head>
+<body>
+  <!-- 1. The <iframe> (and video player) will replace this <div> tag. -->
+  <div id="player"></div>
+
+  <br>
+
+  <button id="play">Play</button>
+  <button id="pause">Pause</button>
+
+  <script src="youtube.js"></script>
+  <script>
+  document.getElementById('play').addEventListener('click', function(){
+    player.playVideo();
+  });
+
+  document.getElementById('pause').addEventListener('click', function(){
+    player.pauseVideo();
+  });
+  </script>
+</body>
+</html>
