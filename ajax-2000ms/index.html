@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+
+</head>
+<body>
+<nav>
+  <a href="contato.html">contato</a>
+  <a href="outra.html">outra</a>
+  <a href="lenta.php">lentaaaa</a>
+</nav>
+
+<article id="content"></article>
+
+<script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+<script>
+(function($){
+
+  var $document = $('document'),
+      $content = $('#content'),
+      img = new Image();
+      img.src = 'loading.gif'; //preloading gif
+      $loading = $('<img src="' + img.src + '" />'),
+      ajaxHasReturned = false;
+
+  $('nav').on('click', 'a', function(event){
+    var $this = $(this),
+        ret,
+        intv;
+
+    event.preventDefault();
+
+    ajaxHasReturned = false;
+    $content.html($loading);
+
+    intv = setInterval(function(){
+      console.log('2000ms has passed');
+
+      if (ajaxHasReturned) {
+        clearInterval(intv);
+        $content.trigger('ajaxHasReturned', ajaxHasReturned);
+      }
+    }, 2000);
+
+    ret = $.ajax({
+      url: $this.attr('href'),
+      type: 'GET'
+    });
+
+    ret.then(function(data){
+      ajaxHasReturned = data;
+    })
+  });
+
+  $content.on('ajaxHasReturned', function(event, data){
+    $content.html(data);
+  });
+
+
+}(jQuery));
+</script>
+</body>
+</html>
