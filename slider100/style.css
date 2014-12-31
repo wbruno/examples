@@ -52,18 +52,19 @@ a { text-decoration: none; }
 .slider-3 {
     position: absolute; top: 0;
     transition: all 1s ease-in-out;
+    z-index: -1;
 }
 
 .slider-step-1 .slider-1 { left: 0px; z-index: 2; }
-.slider-step-1 .slider-2 { left: 33%; z-index: -1; }
-.slider-step-1 .slider-3 { left: -33%; }
+.slider-step-1 .slider-2 { left: 100%; }
+.slider-step-1 .slider-3 { left: -100%; }
 
-.slider-step-2 .slider-1 { left: -33%; }
+.slider-step-2 .slider-1 { left: -100%; }
 .slider-step-2 .slider-2 { left: 0px; z-index: 2; }
-.slider-step-2 .slider-3 { left: 33%; z-index: -1; }
+.slider-step-2 .slider-3 { left: 100%; }
 
-.slider-step-3 .slider-1 { left: 33%; z-index: -1; }
-.slider-step-3 .slider-2 { left: -33%; }
+.slider-step-3 .slider-1 { left: 100%; }
+.slider-step-3 .slider-2 { left: -100%; }
 .slider-step-3 .slider-3 { left: 0px; z-index: 2; }
 
 #slider {
