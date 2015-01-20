@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+</head>
+<body>
+
+  <form action="" id="form">
+    <input type="text" id="name" required="required" />
+    <input type="checkbox" id="check" />
+
+    <input type="submit" />
+  </form>
+
+<script>
+(function(){
+  var $name = document.getElementById('name'),
+      $check = document.getElementById('check'),
+      $form = document.getElementById('form');
+
+  $check.addEventListener('click', function() {
+    if (!!this.checked) {
+      $name.removeAttribute('required');
+    } else {
+      $name.setAttribute('required', 'required');
+    }
+  });
+
+  $form.addEventListener('submit', function(e) {
+    e.preventDefault();
+
+    alert('Form Submitted');
+  });
+
+}());
+</script>
+</body>
+</html>

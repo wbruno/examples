@@ -8,6 +8,7 @@ Snippets of codes made by wbruno
 * [check-json](http://wbruno.github.io/examples/check-json/)
 * [checkSum](http://wbruno.github.io/examples/checkSum/)
 * [disable_inputs](http://wbruno.github.io/examples/disable_inputs/)
+* [input-check-required](http://wbruno.github.io/examples/input-check-required/)
 * [rotate](http://wbruno.github.io/examples/rotate/)
 * [scup](https://github.com/wbruno/examples/tree/gh-pages/scup)
 * [show-hide](http://wbruno.github.io/examples/show-hide/)
