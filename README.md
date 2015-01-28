@@ -15,6 +15,7 @@ Snippets of codes made by wbruno
 * [slider100](http://wbruno.github.io/examples/slider100/)
 * [star-rating](http://wbruno.github.io/examples/star-rating/) - php
 * [time-counter](http://wbruno.github.io/examples/time-counter/)
-* [tt](http://wbruno.github.io/examples/tt/tt.html)g
+* [time-redirect](http://wbruno.github.io/examples/time-redirect/)
+* [tt](http://wbruno.github.io/examples/tt/tt.html)
 * [yt-iframe-api](http://wbruno.github.io/examples/yt-iframe-api/)
 
