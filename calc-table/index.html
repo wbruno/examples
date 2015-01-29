@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+</head>
+<body>
+<table>
+  <tr>
+    <th>Preço</th>
+    <th>Quantidade</th>
+    <th>Total</th>
+  </tr>
+  <tr>
+    <td>Preço: <input type="text" readonly="readonly" value="12.00" class="price" /></td>
+    <td>Quantidade: <input type="text" class="qnt" /></td>
+    <td>Total: <input type="text" class="total" /></td>
+  </tr>
+  <tr>
+    <td>Preço: <input type="text" readonly="readonly" value="15.00" class="price" /></td>
+    <td>Quantidade: <input type="text" class="qnt" /></td>
+    <td>Total: <input type="text" class="total" /></td>
+  </tr>
+  <tr>
+    <td>Preço: <input type="text" readonly="readonly" value="7.00" class="price" /></td>
+    <td>Quantidade: <input type="text" class="qnt" /></td>
+    <td>Total: <input type="text" class="total" /></td>
+  </tr>
+  <tr>
+    <td>Preço: <input type="text" readonly="readonly" value="9.30" class="price" /></td>
+    <td>Quantidade: <input type="text" class="qnt" /></td>
+    <td>Total: <input type="text" class="total" /></td>
+  </tr>
+  <tr>
+    <td>Preço: <input type="text" readonly="readonly" value="2.12" class="price" /></td>
+    <td>Quantidade: <input type="text" class="qnt" /></td>
+    <td>Total: <input type="text" class="total" /></td>
+  </tr>
+</table>
+
+<script type="text/javascript">
+(function(){
+  'use strict';
+  var $qnts = document.querySelectorAll('.qnt');
+
+  $qnts = [].slice.call($qnts);
+
+  $qnts.forEach(function($qnt) {
+    $qnt.addEventListener('keyup', function(){
+      var $tr = this.parentNode.parentNode,
+          price = $tr.querySelector('.price').value,
+          $total = $tr.querySelector('.total');
+
+      $total.value = parseFloat(this.value, 10) * parseFloat(price, 10);
+    });
+  });
+}());
+</script>
+
+</body>
+</html>
+
