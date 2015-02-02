@@ -15,3 +15,20 @@ $form.addEventListener('submit', function(event){
 });
 </script>
 
+<form action="" id="form2">
+  <input type="text" id="name2" disabled="disabled" />
+  <input type="submit" value="Ok" />
+</form>
+
+<script type="text/javascript">
+var $name2 = document.getElementById('name2'),
+    $form2 = document.getElementById('form2');
+
+$form2.addEventListener('submit', function(event){
+  if ($name2.value === '' && $name2.getAttribute('disabled') !== 'disabled') {
+    event.preventDefault();
+    alert('False');
+  }
+});
+</script>
+
