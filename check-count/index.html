@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+<style>
+label { display: block; }
+</style>
+</head>
+<body>
+
+    <label><input type="checkbox" name="ch[]" /></label>
+    <label><input type="checkbox" name="ch[]" /></label>
+    <label><input type="checkbox" name="ch[]" /></label>
+    <label><input type="checkbox" name="ch[]" /></label>
+    <label><input type="checkbox" name="ch[]" /></label>
+    <label><input type="checkbox" name="ch[]" /></label>
+    <label><input type="checkbox" name="ch[]" /></label>
+    <label><input type="checkbox" name="ch[]" /></label>
+    <label><input type="checkbox" name="ch[]" /></label>
+    <label><input type="checkbox" name="ch[]" /></label>
+
+    <p id="result"></p>
+
+<script>
+(function (document) {
+  "use strict";
+  var $chs     = document.querySelectorAll("input[name='ch[]']"),
+      $result  = document.getElementById("result"),
+      i = $chs.length;
+
+  var initialCount = function($chs) {
+    var i = $chs.length,
+        count = 0;
+    while (i--) {
+      count += ($chs[i].checked === true) ? 1 : 0;
+    }
+
+    return count;
+  };
+
+  //conta os checks antes de comecar a clicar
+  $result.innerHTML = initialCount($chs);
+
+  while (i--) {
+    var element = $chs[i];
+    element.addEventListener("click", function () {
+      var count = parseInt($result.innerHTML || 0, 10),
+          value = this.checked === true ? 1 : -1;
+
+      $result.innerHTML = count + value;
+    });
+  };
+
+}(document));
+</script>
+</body>
+</html>
