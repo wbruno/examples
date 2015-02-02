@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+</head>
+<body>
+
+<select name="count">
+  <option value="5+5">5+5</option>
+  <option value="6+6">6+6</option>
+  <option value="7+7">7+7</option>
+</select>
+
+<br><br>
+
+<select name="result">
+  <option value="10">10</option>
+  <option value="12">12</option>
+  <option value="14">14</option>
+</select>
+
+<script>
+(function(){
+  'use strict';
+  var $count = document.querySelector('select[name="count"]'),
+      $result = document.querySelector('select[name="result"]');
+
+  function selected($select, value) {
+    var $options = $select.getElementsByTagName('option'),
+        v = String(eval(value));
+
+    for(var i=0; i < $options.length; i++) {
+      if ($options[i].value === v) {
+        return $options[i].selected = true;
+      }
+    }
+  }
+
+  $count.addEventListener('change', function(){
+    var v = this.value;
+    selected($result, this.value);
+  });
+
+}());
+</script>
+
+</body>
+</html>
+

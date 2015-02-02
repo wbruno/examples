@@ -14,6 +14,7 @@ Snippets of codes made by wbruno
 * [input-disabled](http://wbruno.github.io/examples/input-disabled/)
 * [rotate](http://wbruno.github.io/examples/rotate/)
 * [scup](https://github.com/wbruno/examples/tree/gh-pages/scup)
+* [select-sum](http://wbruno.github.io/examples/select-sum/)
 * [show-hide](http://wbruno.github.io/examples/show-hide/)
 * [slider100](http://wbruno.github.io/examples/slider100/)
 * [star-rating](http://wbruno.github.io/examples/star-rating/) - php

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+</head>
+<body>
+
+<script>
+(function(window, document, undefined){
+  'use strict';
+
+  document.addEventListener('DOMContentLoaded', function(event) {
+    var time = 15;
+    var $timeLeft = document.getElementById('timeLeft');
+
+    $timeLeft.innerHTML = time;
+
+    var itv = setInterval(function(){
+      $timeLeft.innerHTML = time--;
+
+      if (time === 0) {
+        clearTimeout(itv);
+        location.href = 'http://wbruno.com.br';
+      }
+    }, 1000);
+  });
+}(window, document));
+</script>
+
+<p>Você será redirecionado em <span id="timeLeft"></span> segundos.</p>
+
+</body>
+</html>
+
