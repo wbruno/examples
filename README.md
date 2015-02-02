@@ -10,6 +10,7 @@ Snippets of codes made by wbruno
 * [checkSum](http://wbruno.github.io/examples/checkSum/)
 * [disable_inputs](http://wbruno.github.io/examples/disable_inputs/)
 * [input-check-required](http://wbruno.github.io/examples/input-check-required/)
+* [input-disabled](http://wbruno.github.io/examples/input-disabled/)
 * [rotate](http://wbruno.github.io/examples/rotate/)
 * [scup](https://github.com/wbruno/examples/tree/gh-pages/scup)
 * [show-hide](http://wbruno.github.io/examples/show-hide/)

@@ -1,0 +1,17 @@
+<form action="" id="form">
+  <input type="text" id="name" />
+  <input type="submit" value="Ok" />
+</form>
+
+<script ltype="text/javascript">
+var $name = document.getElementById('name'),
+    $form = document.getElementById('form');
+
+$form.addEventListener('submit', function(event){
+  if ($name.value === '' && $name.getAttribute('disabled') !== 'disabled') {
+    event.preventDefault();
+    alert('False');
+  }
+});
+</script>
+
