@@ -39,7 +39,8 @@ $formUpload.addEventListener('submit', function(event){
       } else {
         $preview.innerHTML = 'Arquivo não enviado';
       }
-
+    } else {
+      $preview.innerHTML = xhr.statusText;
     }
   });
 
