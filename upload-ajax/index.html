@@ -32,12 +32,12 @@ $formUpload.addEventListener('submit', function(event){
   xhr.upload.addEventListener("progress", function(e) {
     if (e.lengthComputable) {
       var percentage = Math.round((e.loaded * 100) / e.total);
-      $preview.innerHTML = percentage;
+      $preview.innerHTML = String(percentage) + '%';
     }
   }, false);
 
   xhr.upload.addEventListener("load", function(e){
-    $preview.innerHTML = 100;
+    $preview.innerHTML = String(100) + '%';
   }, false);
 
 }, false);
