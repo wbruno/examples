@@ -21,5 +21,6 @@ Snippets of codes made by wbruno
 * [time-counter](http://wbruno.github.io/examples/time-counter/)
 * [time-redirect](http://wbruno.github.io/examples/time-redirect/)
 * [tt](http://wbruno.github.io/examples/tt/tt.html)
+* [upload-ajax](http://github.com/wbruno/examples/tree/gh-pages/upload-ajax/) - php
 * [yt-iframe-api](http://wbruno.github.io/examples/yt-iframe-api/)
 
