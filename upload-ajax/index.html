@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
+  <meta charset="utf-8" />
   <title>Upload ajax</title>
 </head>
 <body>
@@ -28,6 +29,19 @@ $formUpload.addEventListener('submit', function(event){
   var formData = new FormData($formUpload);
   formData.append("i", i++);
   xhr.send(formData);
+
+  xhr.addEventListener('readystatechange', function() {
+    if (xhr.readyState === 4 && xhr.status == 200) {
+      var json = JSON.parse(xhr.responseText);
+
+      if (!json.error && json.status === 'ok') {
+        $preview.innerHTML += '<br />Enviado!!';
+      } else {
+        $preview.innerHTML = 'Arquivo não enviado';
+      }
+
+    }
+  });
 
   xhr.upload.addEventListener("progress", function(e) {
     if (e.lengthComputable) {
