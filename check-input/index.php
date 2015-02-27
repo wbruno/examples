@@ -31,8 +31,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 </form>
 
 <script>
-var $form = document.getElementById('form'),
-    $check = $form.querySelectorAll('input[type="checkbox"]');
+(function(document, undefined){
+  'use strict';
+  var $form = document.getElementById('form'),
+      $check = $form.querySelectorAll('input[type="checkbox"]');
 
   $check = [].slice.call($check);
 
@@ -47,7 +49,7 @@ var $form = document.getElementById('form'),
       }
     });
   });
-
+}(document));
 </script>
 
 
