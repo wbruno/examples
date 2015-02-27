@@ -7,6 +7,7 @@ Snippets of codes made by wbruno
 * [calc-table](http://wbruno.github.io/examples/calc-table/)
 * [change-links](http://wbruno.github.io/examples/change-links/) - php
 * [check-count](http://wbruno.github.io/examples/check-count/)
+* [check-input](http://github.com/wbruno/examples/tree/gh-pages/check-input/) - php
 * [check-json](http://wbruno.github.io/examples/check-json/)
 * [checkSum](http://wbruno.github.io/examples/checkSum/)
 * [disable_inputs](http://wbruno.github.io/examples/disable_inputs/)
