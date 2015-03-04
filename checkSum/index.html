@@ -3,6 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <title>Document</title>
+    <link rel="stylesheet" href="../gh-fork-ribbon.css" />
+
 <style>
 label { display: block; }
 </style>
@@ -10,16 +12,16 @@ label { display: block; }
 </head>
 <body>
 
-    <label>1,00 <input type="checkbox" name="ch[]" value="1,00" data-value="1,01" /></label>
-    <label>2,00 <input type="checkbox" name="ch[]" value="2,00" data-value="2,01" /></label>
-    <label>3,00 <input type="checkbox" name="ch[]" value="3,00" data-value="3,01" /></label>
-    <label>4,00 <input type="checkbox" name="ch[]" value="4,00" data-value="4,01" /></label>
-    <label>5,00 <input type="checkbox" name="ch[]" value="5,00" data-value="5,01" /></label>
-    <label>6,00 <input type="checkbox" name="ch[]" value="6,00" data-value="6,01" /></label>
-    <label>7,00 <input type="checkbox" name="ch[]" value="7,00" data-value="7,01" /></label>
-    <label>8,00 <input type="checkbox" name="ch[]" value="8,00" data-value="8,01" /></label>
-    <label>9,00 <input type="checkbox" name="ch[]" value="9,00" data-value="9,01" /></label>
-    <label>10,00 <input type="checkbox" name="ch[]" value="10,00" data-value="10,01" /></label>
+    <label>1,01 <input type="checkbox" name="ch[]" value="1,01" data-value="1,01" /></label>
+    <label>2,01 <input type="checkbox" name="ch[]" value="2,01" data-value="2,01" /></label>
+    <label>3,01 <input type="checkbox" name="ch[]" value="3,01" data-value="3,01" /></label>
+    <label>4,01 <input type="checkbox" name="ch[]" value="4,01" data-value="4,01" /></label>
+    <label>5,01 <input type="checkbox" name="ch[]" value="5,01" data-value="5,01" /></label>
+    <label>6,01 <input type="checkbox" name="ch[]" value="6,01" data-value="6,01" /></label>
+    <label>7,01 <input type="checkbox" name="ch[]" value="7,01" data-value="7,01" /></label>
+    <label>8,01 <input type="checkbox" name="ch[]" value="8,01" data-value="8,01" /></label>
+    <label>9,01 <input type="checkbox" name="ch[]" value="9,01" data-value="9,01" /></label>
+    <label>10,01 <input type="checkbox" name="ch[]" value="10,01" data-value="10,01" /></label>
 
     <label>Resultado <input type="text" name="result" id="result" value="R$ 0,00" /></label>
 
@@ -73,10 +75,16 @@ String.prototype.toFloat = function () {
 
             $result.value = "R$ " + String(result.toFixed(2)).formatMoney();
         });
-            
+
     };
 
 }(document));
 </script>
+
+<div class="github-fork-ribbon-wrapper right">
+  <div class="github-fork-ribbon">
+    <a href="https://github.com/wbruno/examples">Fork me on GitHub</a>
+  </div>
+</div>
 </body>
 </html>

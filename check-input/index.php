@@ -15,6 +15,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 <head>
   <meta charset="UTF-8">
   <title>Document</title>
+  <link rel="stylesheet" href="../gh-fork-ribbon.css" />
 </head>
 <body>
 
@@ -52,7 +53,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 }(document));
 </script>
 
-
+<div class="github-fork-ribbon-wrapper right">
+  <div class="github-fork-ribbon">
+    <a href="https://github.com/wbruno/examples">Fork me on GitHub</a>
+  </div>
+</div>
 </body>
 </html>
 
