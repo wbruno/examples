@@ -13,6 +13,7 @@ Snippets of codes made by wbruno
 * [disable_inputs](http://wbruno.github.io/examples/disable_inputs/)
 * [input-check-required](http://wbruno.github.io/examples/input-check-required/)
 * [input-disabled](http://wbruno.github.io/examples/input-disabled/)
+* [pause-interval](http://wbruno.github.io/examples/pause-interval/)
 * [rotate](http://wbruno.github.io/examples/rotate/)
 * [scup](https://github.com/wbruno/examples/tree/gh-pages/scup)
 * [select-sum](http://wbruno.github.io/examples/select-sum/)

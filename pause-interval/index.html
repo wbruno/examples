@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+
+  <style type="text/css">
+  #ret {
+    width: 200px;
+    height: 200px;
+    line-height: 200px;
+    border: 1px solid;
+    font-size: 70px;
+    text-align: center;
+  }
+  </style>
+</head>
+<body>
+
+<div id="ret">0</div>
+
+<script type="text/javascript">
+var $ret = document.getElementById('ret'),
+    itv;
+
+function write() {
+  $ret.innerHTML = parseInt($ret.innerHTML, 10)+ 1;
+}
+
+itv = setInterval(write, 1000);
+
+$ret.addEventListener('mouseenter', function(){
+  clearInterval(itv);
+});
+
+$ret.addEventListener('mouseleave', function(){
+  itv = setInterval(write, 1000);
+});
+</script>
+
+</body>
+</html>
