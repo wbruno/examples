@@ -20,6 +20,7 @@ Snippets of codes made by wbruno
 * [show-hide](http://wbruno.github.io/examples/show-hide/)
 * [slider100](http://wbruno.github.io/examples/slider100/)
 * [star-rating](http://wbruno.github.io/examples/star-rating/) - php
+* [text-images](http://wbruno.github.io/examples/text-images/)
 * [time-counter](http://wbruno.github.io/examples/time-counter/)
 * [time-redirect](http://wbruno.github.io/examples/time-redirect/)
 * [tt](http://wbruno.github.io/examples/tt/tt.html)

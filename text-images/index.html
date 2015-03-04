@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+</head>
+<body>
+<p>Imagens existentes: </p>
+<ul>
+  <li>mickey</li>
+  <li>minnie</li>
+  <li>tijolo</li>
+</ul>
+
+<input type="text" id="text" />
+
+<div id="view"></div>
+
+<script type="text/javascript">
+var $text = document.getElementById('text'),
+    $view = document.getElementById('view');
+
+$text.addEventListener('blur', function(){
+  var img = document.createElement('img');
+  img.src = this.value + '.png';
+
+  $view.appendChild(img);
+});
+</script>
+</body>
+</html>
