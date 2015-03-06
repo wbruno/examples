@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+  <link rel="stylesheet" href="../gh-fork-ribbon.css" />
+</head>
+<body>
+
+<select id="numquest">
+  <option value="">Escolha</option>
+  <option value="5">5</option>
+  <option value="10">10</option>
+  <option value="15">15</option>
+</select>
+
+<a href="result.php?q=" id="link">Link</a>
+<input type="text" id="ino" />
+
+
+<script>
+var $numquest = document.getElementById('numquest'),
+    $ino = document.getElementById('ino'),
+    $link = document.getElementById('link');
+
+$numquest.addEventListener('change', function(){
+  $ino.value = this.value;
+  $link.href = $link.href.replace(/q=([0-9]*)$/, 'q=' + this.value);
+});
+</script>
+
+<div class="github-fork-ribbon-wrapper right">
+  <div class="github-fork-ribbon">
+    <a href="https://github.com/wbruno/examples">Fork me on GitHub</a>
+  </div>
+</div>
+</body>
+</html>
+
