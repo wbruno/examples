@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="../gh-fork-ribbon.css" />
+  <title>Document</title>
+</head>
+<body>
+
+  <input type="text" class="sum" /><br />
+  <input type="text" class="sum" /><br />
+  <input type="text" class="sum" /><br />
+  <input type="text" class="sum" /><br />
+  <input type="text" class="sum" /><br />
+  <input type="text" class="sum" /><br /><br />
+
+  Resultado: <input type="text" id="result" />
+
+<script type="text/javascript">
+var v_obj, v_fun;
+function mascara(o,f) {
+  v_obj = o;
+  v_fun = f;
+  setTimeout(execmascara, 1);
+}
+function execmascara() {
+  v_obj.value = v_fun(v_obj.value);
+}
+function mvalor(v) {
+  v = v.replace(/\D/g,"");
+  v = v.replace(/(\d)(\d{8})$/,"$1.$2");
+  v = v.replace(/(\d)(\d{5})$/,"$1.$2");
+  v = v.replace(/(\d)(\d{2})$/,"$1,$2");
+  return v;
+}
+String.prototype.formatMoney = function () {
+  var v = this;
+
+  if (v.indexOf('.') === -1) {
+    v = v.replace(/([\d]+)/, "$1,00");
+  }
+
+  v = v.replace(/([\d]+)\.([\d]{1})$/, "$1,$20");
+  v = v.replace(/([\d]+)\.([\d]{2})$/, "$1,$2");
+  v = v.replace(/([\d]+)([\d]{3}),([\d]{2})$/, "$1.$2,$3");
+
+  return v;
+};
+
+String.prototype.toFloat = function () {
+  var v = this;
+  if (!v) {
+    return 0;
+  }
+  return parseFloat(v.replace(/[\D]+/g, "").replace(/([\d]+)(\d{2})$/, "$1.$2"));
+};
+
+(function(document, undefined) {
+  'use strict';
+  var $inputs = document.querySelectorAll('.sum'),
+      $result = document.getElementById('result');
+
+  $inputs = [].slice.call($inputs);
+
+  $inputs.forEach(function($input) {
+    $input.addEventListener('keyup', function(event) {
+      mascara(this, mvalor);
+    });
+
+    $input.addEventListener('keyup', function(event) {
+      var sum = 0;
+      $inputs.forEach(function($each) {
+        sum += String($each.value).toFloat() || 0;
+      });
+
+      $result.value = sum.toFixed(2).formatMoney();
+    });
+  });
+
+}(document))
+</script>
+
+<div class="github-fork-ribbon-wrapper right">
+  <div class="github-fork-ribbon">
+    <a href="https://github.com/wbruno/examples">Fork me on GitHub</a>
+  </div>
+</div>
+</body>
+</html>
