@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="../gh-fork-ribbon.css" />
+  <title>Document</title>
+<style>
+input { display: block; }
+</style>
+</head>
+<body>
+  <select name="number" id="number">
+    <option value="1">1</option>
+    <option value="2">2</option>
+    <option value="3">3</option>
+    <option value="4">4</option>
+    <option value="5">5</option>
+    <option value="6">6</option>
+    <option value="7">7</option>
+    <option value="8">8</option>
+    <option value="9">9</option>
+    <option value="10">10</option>
+  </select>
+  <fieldset id="fields"></fieldset>
+
+<script>
+var $number = document.getElementById('number'),
+    $fields = document.getElementById('fields');
+
+  $number.addEventListener('change', function() {
+    var max = this.value;
+
+    $fields.innerHTML = ''; //reset
+
+    while(max--) {
+      var input = createInput(max);
+      $fields.appendChild(input);
+    }
+  });
+function createInput(i) {
+  var input = document.createElement('input');
+  input.setAttribute('name', 'whatever');
+  input.setAttribute('placeholder', 'Ex: Foo Bar');
+  input.setAttribute('id', 'whatever' + i);
+  return input;
+}
+</script>
+
+<div class="github-fork-ribbon-wrapper right">
+  <div class="github-fork-ribbon">
+    <a href="https://github.com/wbruno/examples">Fork me on GitHub</a>
+  </div>
+</div>
+</body>
+</html>
