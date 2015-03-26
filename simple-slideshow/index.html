@@ -38,27 +38,28 @@ ul { list-style: none; }
   'use strict';
   $.fn.simpleSlideShow = function(settings) {
     var config = {
-      'delay' : 2000,
+      'delay'     : 2000,
       'fadeSpeed' : 500
     };
     var $obj  = $(this),
-        $lis   = $obj.find( 'li' ),
+        $lis  = $obj.find( 'li' ),
         count = $lis.length,
-        i     = 0;
+        i     = 0,
+        intv;
 
     $.extend( config, settings || {} );
 
     $lis.eq( 0 ).show();
 
-    setInterval(function() {
+    intv = setInterval(function() {
       $lis.eq( i ).fadeOut( config.fadeSpeed );
       i = ( i + 1 == count ) ? 0 : i + 1;
       $lis.eq( i ).fadeIn( config.fadeSpeed );
     }, config.delay );
 
     return this;
-  }
-})(jQuery);
+  };
+}(jQuery));
 </script>
 <script>jQuery('#slideshow').simpleSlideShow({ delay: 1000 });</script>
 
