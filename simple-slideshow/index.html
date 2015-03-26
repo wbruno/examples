@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="../gh-fork-ribbon.css" />
+  <title>Document</title>
+<style>
+* { margin: 0; padding: 0; }
+ul { list-style: none; }
+
+#slideshow {
+  margin: 0 auto;
+  position: relative;
+  width: 400px; height: 200px;
+}
+#slideshow li {
+  display: none;
+  position: absolute;
+}
+</style>
+</head>
+<body>
+
+<div class="pg-contact">
+  <aside id="slideshow">
+    <ul>
+      <li><img src="http://placehold.it/400x200/ff0000" alt="Slide 1"></li>
+      <li><img src="http://placehold.it/400x200/00ff00" alt="Slide 2"></li>
+      <li><img src="http://placehold.it/400x200/0000ff" alt="Slide 3"></li>
+      <li><img src="http://placehold.it/400x200/ffff00" alt="Slide 4"></li>
+    </ul>
+  </aside>
+</div>
+
+<script src="http://code.jquery.com/jquery-latest.min.js"></script>
+<script>
+(function($) {
+  'use strict';
+  $.fn.simpleSlideShow = function(settings) {
+    var config = {
+      'delay' : 2000,
+      'fadeSpeed' : 500
+    };
+    var $obj  = $(this),
+        $lis   = $obj.find( 'li' ),
+        count = $lis.length,
+        i     = 0;
+
+    $.extend( config, settings || {} );
+
+    $lis.eq( 0 ).show();
+
+    setInterval(function() {
+      $lis.eq( i ).fadeOut( config.fadeSpeed );
+      i = ( i + 1 == count ) ? 0 : i + 1;
+      $lis.eq( i ).fadeIn( config.fadeSpeed );
+    }, config.delay );
+
+    return this;
+  }
+})(jQuery);
+</script>
+<script>jQuery('#slideshow').simpleSlideShow({ delay: 1000 });</script>
+
+
+<div class="github-fork-ribbon-wrapper right">
+  <div class="github-fork-ribbon">
+    <a href="https://github.com/wbruno/examples">Fork me on GitHub</a>
+  </div>
+</div>
+</body>
+</html>

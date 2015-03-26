@@ -21,6 +21,7 @@ Snippets of codes made by wbruno
 * [select-link](http://wbruno.github.io/examples/select-link/)
 * [select-sum](http://wbruno.github.io/examples/select-sum/)
 * [show-hide](http://wbruno.github.io/examples/show-hide/)
+* [simple-slideshow](http://wbruno.github.io/examples/simple-slideshow/)
 * [slider100](http://wbruno.github.io/examples/slider100/)
 * [star-rating](http://wbruno.github.io/examples/star-rating/) - php
 * [text-images](http://wbruno.github.io/examples/text-images/)
