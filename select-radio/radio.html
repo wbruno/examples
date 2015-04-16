@@ -1,0 +1,64 @@
+&lt;!DOCTYPE html>
+&lt;html lang="en">
+&lt;head>
+  &lt;meta charset="UTF-8">
+  &lt;title>Document&lt;/title>
+  &lt;link rel="stylesheet" href="../gh-fork-ribbon.css" />
+
+&lt;script type="text/javascript">
+function id(el) {
+  return document.getElementById(el);
+}
+function mostra(element) {
+  if (element) {
+    id(element.value).style.display = 'block';
+  }
+}
+function esconde_todos($element, tagName) {
+  var $elements = $element.getElementsByTagName(tagName),
+      i = $elements.length;
+  while(i--) {
+    $elements[i].style.display = 'none';
+  }
+}
+window.addEventListener('load', function() {
+  var $Masculino = id('Masculino'),
+      $Feminino = id('Feminino'),
+      $sexo  = id('sel-sexo');
+
+  //mostrando no onload da página
+  esconde_todos(id('palco'), 'div');
+  mostra(document.querySelector('input[name="rd-sexo"]:checked'));
+
+
+  //mostrando ao clicar no radio
+  var $radios = document.querySelectorAll('input[name="rd-sexo"]');
+  $radios = [].slice.call($radios);
+
+  $radios.forEach(function($each) {
+    $each.addEventListener('click', function() {
+      esconde_todos(id('palco'), 'div');
+      mostra(this);
+    });
+  });
+});
+&lt;/script>
+&lt;/head>
+&lt;body>
+&lt;label>
+  &lt;label>&lt;input type="radio" name="rd-sexo" value="Feminino" />Feminino&lt;/label>
+  &lt;label>&lt;input type="radio" name="rd-sexo" value="Masculino" />Masculino&lt;/label>
+
+  &lt;div id="palco">
+    &lt;div id="Masculino">Seu sexo é Masculino!&lt;/div>
+    &lt;div id="Feminino">Seu sexo é Feminino!&lt;/div>
+  &lt;/div>
+
+
+&lt;div class="github-fork-ribbon-wrapper right">
+  &lt;div class="github-fork-ribbon">
+    &lt;a href="https://github.com/wbruno/examples">Fork me on GitHub&lt;/a>
+  &lt;/div>
+&lt;/div>
+&lt;/body>
+&lt;/html>

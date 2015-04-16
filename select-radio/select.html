@@ -1,0 +1,61 @@
+&lt;!DOCTYPE html>
+&lt;html lang="en">
+&lt;head>
+  &lt;meta charset="UTF-8">
+  &lt;title>Document&lt;/title>
+  &lt;link rel="stylesheet" href="../gh-fork-ribbon.css" />
+
+&lt;script type="text/javascript">
+function id(el) {
+  return document.getElementById(el);
+}
+function mostra(element) {
+  if (element.value) {
+    id(element.value).style.display = 'block';
+  }
+}
+function esconde_todos($element, tagName) {
+  var $elements = $element.getElementsByTagName(tagName),
+      i = $elements.length;
+  while(i--) {
+    $elements[i].style.display = 'none';
+  }
+}
+window.addEventListener('load', function() {
+  var $Masculino = id('Masculino'),
+      $Feminino = id('Feminino'),
+      $sexo  = id('sel-sexo');
+
+  //mostrando no onload da página
+  esconde_todos(id('palco'), 'div');
+  mostra($sexo);
+
+  //mostrando ao mudar o select
+  $sexo.addEventListener('change', function() {
+    esconde_todos(id('palco'), 'div');
+    mostra(this);
+  });
+});
+&lt;/script>
+&lt;/head>
+&lt;body>
+  &lt;select name="sel-sexo" id="sel-sexo">
+    &lt;option value="">--&lt;/option>
+    &lt;option value="Feminino">Feminino&lt;/option>
+    &lt;option value="Masculino">Masculino&lt;/option>
+  &lt;/select>
+
+  &lt;div id="palco">
+    &lt;div id="Masculino">Seu sexo é Masculino!&lt;/div>
+    &lt;div id="Feminino">Seu sexo é Feminino!&lt;/div>
+  &lt;/div>
+
+
+
+&lt;div class="github-fork-ribbon-wrapper right">
+  &lt;div class="github-fork-ribbon">
+    &lt;a href="https://github.com/wbruno/examples">Fork me on GitHub&lt;/a>
+  &lt;/div>
+&lt;/div>
+&lt;/body>
+&lt;/html>

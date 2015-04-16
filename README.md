@@ -19,6 +19,8 @@ Snippets of codes made by wbruno
 * [scup](https://github.com/wbruno/examples/tree/gh-pages/scup)
 * [select-create-fields](http://wbruno.github.io/examples/select-create-fields/)
 * [select-link](http://wbruno.github.io/examples/select-link/)
+* [select](http://wbruno.github.io/examples/select-radio/select.html)
+* [radio](http://wbruno.github.io/examples/select-radio/radio.html)
 * [select-sum](http://wbruno.github.io/examples/select-sum/)
 * [show-hide](http://wbruno.github.io/examples/show-hide/)
 * [simple-slideshow](http://wbruno.github.io/examples/simple-slideshow/)
