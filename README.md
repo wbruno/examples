@@ -1,7 +1,6 @@
-Examples
-========
+# Examples
 
-Snippets of codes made by wbruno
+## Snippets of codes made by [wbruno](http://wbruno.com.br)
 
 * [ajax-2000ms](http://wbruno.github.io/examples/ajax-2000ms/) - ajax
 * [calc-table](http://wbruno.github.io/examples/calc-table/)
@@ -19,10 +18,12 @@ Snippets of codes made by wbruno
 * [scup](https://github.com/wbruno/examples/tree/gh-pages/scup)
 * [select-create-fields](http://wbruno.github.io/examples/select-create-fields/)
 * [select-link](http://wbruno.github.io/examples/select-link/)
-* [select](http://wbruno.github.io/examples/select-radio/select.html)
-* [radio](http://wbruno.github.io/examples/select-radio/radio.html)
-* [select-jquery](http://wbruno.github.io/examples/select-radio/select-jquery.html)
-* [radio-jquery](http://wbruno.github.io/examples/select-radio/radio-jquery.html)
+* Select Radio
+    - [select](http://wbruno.github.io/examples/select-radio/select.html)
+    - [radio](http://wbruno.github.io/examples/select-radio/radio.html)
+    - [select-jquery](http://wbruno.github.io/examples/select-radio/select-jquery.html)
+    - [radio-jquery](http://wbruno.github.io/examples/select-radio/radio-jquery.html)
+
 * [select-sum](http://wbruno.github.io/examples/select-sum/)
 * [show-hide](http://wbruno.github.io/examples/show-hide/)
 * [simple-slideshow](http://wbruno.github.io/examples/simple-slideshow/)
