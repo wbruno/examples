@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+  <link rel="stylesheet" href="../gh-fork-ribbon.css" />
+
+<script type="text/javascript" src="http://code.jquery.com/jquery-1.11.2.min.js"></script>
+<script type="text/javascript">
+$(document).ready(function(){
+  var $divs = $("#palco > div");
+
+  //mostrando no onload da página
+  $divs.hide();
+  $( '#' + $("input[name='rd-sexo']:checked").val() ).show('fast');
+
+  //mostrando ao clicar no radio
+  $("input[name='rd-sexo']").on('click', function(){
+    $divs.hide();
+    $( '#' + $(this).val() ).show('fast');
+  });
+});
+</script>
+</head>
+<body>
+
+  <label><input type="radio" name="rd-sexo" value="Feminino" />Feminino</label>
+  <label><input type="radio" name="rd-sexo" value="Masculino" />Masculino</label>
+
+  <div id="palco">
+    <div id="Masculino">Seu sexo é Masculino!</div>
+    <div id="Feminino">Seu sexo é Feminino!</div>
+  </div>
+
+<div class="github-fork-ribbon-wrapper right">
+  <div class="github-fork-ribbon">
+    <a href="https://github.com/wbruno/examples">Fork me on GitHub</a>
+  </div>
+</div>
+</body>
+</html>

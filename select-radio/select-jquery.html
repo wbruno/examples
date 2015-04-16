@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+  <link rel="stylesheet" href="../gh-fork-ribbon.css" />
+
+<script type="text/javascript" src="http://code.jquery.com/jquery-1.11.2.min.js"></script>
+<script type="text/javascript">
+$(document).ready(function(){
+  $("#palco > div").hide();
+
+  //mostrando no onload da página
+  $("#palco > div").hide();
+  $( '#' + $("#sel-sexo").val() ).show('fast');
+
+   //mostrando ao mudar o select
+  $("#sel-sexo").on('change', function(){
+    $("#palco > div").hide();
+    $( '#' + $( this ).val() ).show('fast');
+  });
+});
+</script>
+</head>
+<body>
+
+  <select name="sel-sexo" id="sel-sexo">
+    <option value="">--</option>
+    <option value="Feminino">Feminino</option>
+    <option value="Masculino">Masculino</option>
+  </select>
+
+  <div id="palco">
+    <div id="Masculino">Seu sexo é Masculino!</div>
+    <div id="Feminino">Seu sexo é Feminino!</div>
+  </div>
+
+<div class="github-fork-ribbon-wrapper right">
+  <div class="github-fork-ribbon">
+    <a href="https://github.com/wbruno/examples">Fork me on GitHub</a>
+  </div>
+</div>
+</body>
+</html>
