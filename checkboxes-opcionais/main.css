@@ -1,0 +1,17 @@
+main {
+  width: 800px;
+  margin: 0 auto;
+}
+label {
+  display: block;
+  margin-bottom: 10px;
+}
+
+input[type="submit"] {
+  padding: 5px 40px;
+  height: 40px;
+  background: green;
+  color: #fff;
+  font-weight: bold;
+  font-size: 1.2em;
+}
