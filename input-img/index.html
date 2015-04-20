@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+</head>
+<body>
+
+<img src="" id="output" width="200" />
+<form>
+  <input type="text" id="view" />
+  <input type="file" id="file" />
+</form>
+
+<script type="text/javascript">
+var $file = document.getElementById('file'),
+    $view = document.getElementById('view'),
+    $output = document.getElementById('output');
+
+//escrevendo no input
+$file.addEventListener('change', function(){
+  $view.value = $file.value;
+});
+//mostrando na tela antes do upload
+$file.addEventListener('change', function(){
+  var reader = new FileReader();
+  reader.addEventListener('load', function(){
+    $output.src = reader.result;
+  });
+  reader.readAsDataURL(this.files[0]);
+});
+</script>
+</body>
+</html>

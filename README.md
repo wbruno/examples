@@ -13,6 +13,7 @@
 * [disable_inputs](http://wbruno.github.io/examples/disable_inputs/)
 * [input-check-required](http://wbruno.github.io/examples/input-check-required/)
 * [input-disabled](http://wbruno.github.io/examples/input-disabled/)
+* [input-img](http://wbruno.github.io/examples/input-img/)
 * [input-sum](http://wbruno.github.io/examples/input-sum/)
 * [pause-interval](http://wbruno.github.io/examples/pause-interval/)
 * [rotate](http://wbruno.github.io/examples/rotate/)
