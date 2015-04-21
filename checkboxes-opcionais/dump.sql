@@ -40,52 +40,6 @@ INSERT INTO `optional` VALUES (1,'air_con'),(2,'bluetooth'),(3,'parking_sensors'
 UNLOCK TABLES;
 
 --
--- Table structure for table `products`
---
-
-DROP TABLE IF EXISTS `products`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `products` (
-  `id` int(11) DEFAULT NULL,
-  `name` varchar(55) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-/*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Dumping data for table `products`
---
-
-LOCK TABLES `products` WRITE;
-/*!40000 ALTER TABLE `products` DISABLE KEYS */;
-/*!40000 ALTER TABLE `products` ENABLE KEYS */;
-UNLOCK TABLES;
-
---
--- Table structure for table `users`
---
-
-DROP TABLE IF EXISTS `users`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `users` (
-  `id` int(11) DEFAULT NULL,
-  `name` varchar(55) DEFAULT NULL,
-  `age` int(3) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-/*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Dumping data for table `users`
---
-
-LOCK TABLES `users` WRITE;
-/*!40000 ALTER TABLE `users` DISABLE KEYS */;
-INSERT INTO `users` VALUES (1,'William Bruno',26),(1,'Github',30),(3,'John Doe',35);
-/*!40000 ALTER TABLE `users` ENABLE KEYS */;
-UNLOCK TABLES;
-
---
 -- Table structure for table `vehicle_optional`
 --
 
@@ -134,32 +88,6 @@ INSERT INTO `vehicles` VALUES (1,'Batmovel 1941',1941,'Fuga'),(2,'Tumbler',2008,
 /*!40000 ALTER TABLE `vehicles` ENABLE KEYS */;
 UNLOCK TABLES;
 
---
--- Table structure for table `vehicles_wrong`
---
-
-DROP TABLE IF EXISTS `vehicles_wrong`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `vehicles_wrong` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `name` varchar(50) DEFAULT NULL,
-  `year` char(4) DEFAULT NULL,
-  `model` varchar(30) DEFAULT NULL,
-  `air_con` bit(1) DEFAULT NULL,
-  `bluetooth` bit(1) DEFAULT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-/*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Dumping data for table `vehicles_wrong`
---
-
-LOCK TABLES `vehicles_wrong` WRITE;
-/*!40000 ALTER TABLE `vehicles_wrong` DISABLE KEYS */;
-/*!40000 ALTER TABLE `vehicles_wrong` ENABLE KEYS */;
-UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
 /*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
