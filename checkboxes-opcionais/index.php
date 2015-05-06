@@ -58,6 +58,7 @@ if ($id) {
   $sql .= " LEFT JOIN `vehicle_optional`                                ";
   $sql .=	" ON `vehicle_optional`.`id_optional` = `optional`.`id`       ";
   $sql .=	" AND `vehicle_optional`.`id_vehicle` = {$id}                 ";
+  $sql .=	" ORDER BY `optional`.`id`                                    ";
 
   $query = $mysqli->query($sql)or die($mysqli->error);
   while($row = $query->fetch_object()) {
