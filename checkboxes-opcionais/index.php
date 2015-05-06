@@ -50,14 +50,21 @@ if ($id) {
       <fieldset>
         <legend>Opcionais</legend>
 <?php
-  $sql = "SELECT `id`, `name`, (SELECT 'checked' FROM vehicle_optional WHERE id_vehicle = {$id} AND id_optional = optional.id) AS `checked` FROM `optional`;";
+
+  $sql = " SELECT `optional`.`id` , `optional`.`name`                   ";
+  $sql .= " , ( case when `vehicle_optional`.`id_optional` is not null  ";
+  $sql .= "     then 'checked'  end) as checked                         ";
+  $sql .= " FROM `optional`                                             ";
+  $sql .= " LEFT JOIN `vehicle_optional`                                ";
+  $sql .=	" ON `vehicle_optional`.`id_optional` = `optional`.`id`       ";
+  $sql .=	" AND `vehicle_optional`.`id_vehicle` = {$id}                 ";
 
   $query = $mysqli->query($sql)or die($mysqli->error);
   while($row = $query->fetch_object()) {
 ?>
     <label>
       <input type="checkbox" name="optional[]" value="<? echo $row->id; ?>" <?php echo $row->checked; ?>/>
-    <? echo $row->name; ?></label>
+    <?php echo $row->name; ?></label>
 <?php
   }
 ?>
