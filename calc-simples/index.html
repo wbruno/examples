@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+  <link rel="stylesheet" href="../gh-fork-ribbon.css" />
+</head>
+<body>
+  <form action="" method="post">
+    Valor Unitário: <input type="text" name="valor_unitario" id="valor_unitario" />
+    Quantidade: <input type="text" name="qnt" id="qnt" value="0" />
+    Total: <input type="text" name="total" id="total" readonly="readonly" />
+  </form>
+
+<script type="text/javascript">
+function id(el) {
+  return document.getElementById( el );
+}
+function total( un, qnt ) {
+  un = parseFloat(un.replace(',', '.'), 10);
+  return un * qnt;
+}
+window.onload = function() {
+  id('valor_unitario').addEventListener('keyup', function() {
+    var result = total( this.value , id('qnt').value );
+    id('total').value = String(result).formatMoney();
+  });
+
+  id('qnt').addEventListener('keyup', function(){
+    var result = total( id('valor_unitario').value , this.value );
+    id('total').value = String(result).formatMoney();
+  });
+}
+
+String.prototype.formatMoney = function() {
+  var v = this;
+
+  if(v.indexOf('.') === -1) {
+    v = v.replace(/([\d]+)/, "$1,00");
+  }
+
+  v = v.replace(/([\d]+)\.([\d]{1})$/, "$1,$20");
+  v = v.replace(/([\d]+)\.([\d]{2})$/, "$1,$2");
+  v = v.replace(/([\d]+)([\d]{3}),([\d]{2})$/, "$1.$2,$3");
+
+  return v;
+};
+</script>
+
+<div class="github-fork-ribbon-wrapper right">
+  <div class="github-fork-ribbon">
+    <a href="https://github.com/wbruno/examples">Fork me on GitHub</a>
+  </div>
+</div>
+</body>
+</html>

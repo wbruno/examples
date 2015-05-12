@@ -4,6 +4,7 @@
 
 * [ajax-2000ms](http://wbruno.github.io/examples/ajax-2000ms/) - ajax
 * [calc-table](http://wbruno.github.io/examples/calc-table/)
+* [calc-simples](http://wbruno.github.io/examples/calc-simples/)
 * [change-links](http://wbruno.github.io/examples/change-links/) - php
 * [checkboxes-opcionais](http://github.com/wbruno/examples/tree/gh-pages/checkboxes-opcionais/) - php
 * [check-count](http://wbruno.github.io/examples/check-count/)
