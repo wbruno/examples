@@ -17,18 +17,17 @@ function id(el) {
   return document.getElementById( el );
 }
 function total( un, qnt ) {
-  un = parseFloat(un.replace(',', '.'), 10);
-  return un * qnt;
+  return parseFloat(un.replace(',', '.'), 10) * parseFloat(qnt.replace(',', '.'), 10);
 }
 window.onload = function() {
   id('valor_unitario').addEventListener('keyup', function() {
     var result = total( this.value , id('qnt').value );
-    id('total').value = String(result).formatMoney();
+    id('total').value = String(result.toFixed(2)).formatMoney();
   });
 
   id('qnt').addEventListener('keyup', function(){
     var result = total( id('valor_unitario').value , this.value );
-    id('total').value = String(result).formatMoney();
+    id('total').value = String(result.toFixed(2)).formatMoney();
   });
 }
 
