@@ -1,0 +1,19 @@
+label {
+  display: block;
+  margin-bottom: 10px;
+}
+fieldset {
+  border: none;
+  margin: 0;
+  padding: 0
+}
+input, select, textarea {
+  background: #072531;
+  border: none;
+  color: #22586d;
+  font-family: 'Alef', sans-serif;
+  font-size: 16px;
+  padding: 7px 12px;
+}
+input[type="text"] { width: 330px; }
+textarea { width: 460px; }
