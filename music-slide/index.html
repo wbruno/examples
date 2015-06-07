@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+
+<style type="text/css">
+#slide {
+  width: 400px;
+  height: 150px;
+  position: relative;
+  padding: 0;
+}
+.item {
+  position: absolute;
+  z-index: 1;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  opacity: 0;
+  transition: all 1s;
+}
+.item-1 { background-color: red; }
+.item-2 { background-color: blue; }
+.item-3 { background-color: green; }
+.item-4 { background-color: black; }
+.item-5 { background-color: purple; }
+.item-6 { background-color: gray; }
+.item-7 { background-color: yellow; }
+
+.is-active {
+  z-index: 2;
+  opacity: 1;
+}
+</style>
+</head>
+<body>
+
+<audio id="music" controls="controls">
+  Your browser does not support the <code>audio</code> element.
+  <source src="03-storm-the-sorrow.mp3" type="audio/mp3">
+  <source src="03-storm-the-sorrow.ogg" type="audio/ogg">
+</audio>
+
+<ul id="slide">
+  <li class="item item-1 is-active"></li>
+  <li class="item item-2"></li>
+  <li class="item item-3"></li>
+  <li class="item item-4"></li>
+  <li class="item item-5"></li>
+  <li class="item item-6"></li>
+  <li class="item item-7"></li>
+</ul><!-- #slide -->
+
+<script>
+(function(){
+  'use strict';
+
+  var $music = document.getElementById('music'),
+      $items = document.getElementById('slide').querySelectorAll('.item'),
+      itemsQuantity = $items.length;
+
+  $items = [].slice.call($items);
+
+  var i = 0;
+  var itv;
+  var SLIDE_TIME = 800;
+
+  var start = function() {
+    i++;
+
+    i = i < itemsQuantity ? i : 0;
+
+    $items.forEach(function($item) {
+      $item.classList.remove('is-active');
+    });
+    $items[i].classList.add('is-active');
+  };
+
+  $music.addEventListener('ended', function(event) {
+    console.log('ended');
+    clearInterval(itv);
+  });
+  $music.addEventListener('pause', function(event) {
+    console.log('pause');
+    clearInterval(itv);
+  });
+  $music.addEventListener('playing', function(event) {
+    console.log('playing');
+    itv = setInterval(start, SLIDE_TIME)
+  });
+
+}());
+</script>
+</body>
+</html>
