@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+
+<style>
+label { display: block; }
+</style>
+</head>
+<body>
+
+<form action="">
+  <label>Name: <input type="text" name="name" value="Bruno" /></label>
+  <label>Age: <input type="text" name="age" value="26" /></label>
+  <label>Language: <input type="text" name="language" value="JavaScript" /></label>
+</form>
+<div id="preview"></div>
+
+<script type="text/template" id="tpl-preview">
+<h1>Form Preview</h1>
+<strong>Name:</strong> {name}<br/>
+<strong>Age:</strong> {age}<br/>
+<strong>Language:</strong> {language}<br/>
+</script>
+
+<script>
+String.prototype.supplant = function (o) {
+  return this.replace(
+    /\{([^{}]*)\}/g,
+    function (a, b) {
+      var r = o[b];
+      return typeof r === 'string' || typeof r === 'number' ? r : a;
+    }
+  );
+};
+(function(){
+  'use strict';
+  var $btn = document.getElementById('btn-preview'),
+      $preview = document.getElementById('preview'),
+      tpl = document.getElementById('tpl-preview').innerHTML,
+      $name = document.querySelector('input[name="name"]'),
+      $age = document.querySelector('input[name="age"]'),
+      $language = document.querySelector('input[name="language"]');
+
+  function render() {
+    $preview.innerHTML = tpl.supplant({ name: $name.value, age: $age.value, language: $language.value });
+  }
+
+  render();
+  $name.addEventListener('keyup', render);
+  $age.addEventListener('keyup', render);
+  $language.addEventListener('keyup', render);
+}());
+</script>
+</body>
+</html>

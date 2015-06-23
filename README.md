@@ -13,6 +13,7 @@
 * [check-json](http://wbruno.github.io/examples/check-json/)
 * [checkSum](http://wbruno.github.io/examples/checkSum/)
 * [disable_inputs](http://wbruno.github.io/examples/disable_inputs/)
+* [form-preview](http://wbruno.github.io/examples/form-preview/)
 * [input-check-required](http://wbruno.github.io/examples/input-check-required/)
 * [input-disabled](http://wbruno.github.io/examples/input-disabled/)
 * [input-img](http://wbruno.github.io/examples/input-img/)
