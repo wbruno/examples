@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+</head>
+<body>
+
+<script type="text/javascript">
+'use strict';
+const SERVICE = 'http://dragons-api.herokuapp.com/api/dragons';
+
+var xhr = new XMLHttpRequest();
+xhr.open('GET', SERVICE, true);
+xhr.send();
+
+xhr.addEventListener('readystatechange', function() {
+  if(xhr.status !== 200 && xhr.readyState === 4) {
+    console.log(xhr.statusText + ' :(');
+  }
+
+  if (xhr.readyState === 4 && xhr.status === 200) {
+    try {
+      var json = JSON.parse(xhr.responseText);
+      var arr = {};
+      json.forEach(function(e) {
+        if(!arr[e.type]) {
+          arr[e.type] = 1;
+        } else {
+          arr[e.type]++;
+        }
+      });
+      console.table(arr);
+    } catch(e) {
+      console.log(e);
+    }
+  }
+});
+
+</script>
+
+
+
+</body>
+</html>

@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+</head>
+<body>
+
+<script type="text/javascript">
+'use strict';
+
+var getVolume = function(response) {
+  var json = JSON.parse(response);
+  var volume = json[0].data.volume_armazenado.replace(' %', '').replace(',', '.');
+  return parseFloat(volume, 10);
+};
+var fetch = function(date) {
+  var xhr = new XMLHttpRequest();
+  xhr.open('GET', SERVICE + date, true);
+  xhr.send();
+
+  return xhr;
+};
+const SERVICE = 'http://sabesp-api.herokuapp.com/v2/';
+var dates = [
+  '2015-08-27',
+  '2015-08-26',
+  '2015-08-25',
+  '2015-08-24',
+  '2015-08-23',
+  '2015-08-22',
+  '2015-08-21'
+];
+
+var volumes = [];
+
+var xhr = fetch(dates[0]);
+xhr.addEventListener('load', function() {
+  volumes.push(getVolume(xhr.responseText));
+
+  var xhr1 = fetch(dates[1]);
+  xhr1.addEventListener('load', function() {
+    volumes.push(getVolume(xhr1.responseText));
+
+    var xhr2 = fetch(dates[2]);
+    xhr2.addEventListener('load', function() {
+      volumes.push(getVolume(xhr2.responseText));
+
+      var xhr3 = fetch(dates[3]);
+      xhr3.addEventListener('load', function() {
+        volumes.push(getVolume(xhr3.responseText));
+
+        var xhr4 = fetch(dates[4]);
+        xhr4.addEventListener('load', function() {
+          volumes.push(getVolume(xhr4.responseText));
+
+          var xhr5 = fetch(dates[5]);
+          xhr5.addEventListener('load', function() {
+            volumes.push(getVolume(xhr5.responseText));
+
+            var xhr6 = fetch(dates[6]);
+            xhr6.addEventListener('load', function() {
+              volumes.push(getVolume(xhr6.responseText));
+
+              console.log(volumes);
+            });
+          });
+        });
+      });
+    });
+  });
+});
+
+
+</script>
+
+
+
+</body>
+</html>

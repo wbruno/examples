@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+</head>
+<body>
+
+<script type="text/javascript">
+'use strict';
+var handleNotFound = function(xhrLoad) {
+  if(xhr.status !== 200) {
+    throw new Error(xhr.statusText + ' :(');
+  }
+  return xhrLoad;
+};
+
+var parseJSON = function(xhrLoad) {
+  return JSON.parse(xhr.responseText);
+};
+
+var sumTypes = function(json) {
+  var arr = {};
+  json.forEach(function(e) {
+    if(!arr[e.type]) {
+      arr[e.type] = 1;
+    } else {
+      arr[e.type]++;
+    }
+  });
+  return arr;
+};
+
+var display = function(arr) {
+  console.table(arr);
+};
+
+const SERVICE = 'http://dragons-api.herokuapp.com/api/dragons';
+
+var xhr = new XMLHttpRequest();
+xhr.open('GET', SERVICE, true);
+xhr.send();
+
+var p1 = new Promise(function(resolve, reject) {
+  xhr.addEventListener('error', reject);
+  xhr.addEventListener('load', resolve);
+});
+
+p1
+  .then(handleNotFound)
+  .then(parseJSON)
+  .then(sumTypes)
+  .then(display)
+  .catch(function(e) {
+    console.log(e.message);
+  });
+</script>
+
+
+
+</body>
+</html>
