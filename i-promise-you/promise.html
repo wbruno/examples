@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+</head>
+<body>
+
+<script type="text/javascript">
+'use strict';
+var err = 'Some error';
+var obj = { name: 'wBruno '};
+
+var p1 = new Promise(function(resolve, reject) {
+  if(err) {
+    reject(err);
+  } else {
+    resolve(obj);
+  }
+});
+
+
+p1.then(function(result) {
+    console.log('Result: ', result);
+  })
+  .catch(function(err) {
+    console.log('Error: ', err);
+  });
+</script>
+
+
+
+</body>
+</html>

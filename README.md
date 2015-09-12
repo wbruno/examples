@@ -15,6 +15,7 @@
 * [disable_inputs](http://wbruno.github.io/examples/disable_inputs/)
 * [form-preview](http://wbruno.github.io/examples/form-preview/)
 * [input-check-required](http://wbruno.github.io/examples/input-check-required/)
+* [i-promise-you](http://wbruno.github.io/examples/i-promise-you/)
 * [input-disabled](http://wbruno.github.io/examples/input-disabled/)
 * [input-img](http://wbruno.github.io/examples/input-img/)
 * [input-sum](http://wbruno.github.io/examples/input-sum/)
@@ -41,5 +42,6 @@
 * [time-redirect](http://wbruno.github.io/examples/time-redirect/)
 * [tt](http://wbruno.github.io/examples/tt/tt.html)
 * [upload-ajax](http://github.com/wbruno/examples/tree/gh-pages/upload-ajax/) - php
+* [verify-user-on-db](http://github.com/wbruno/examples/tree/gh-pages/verify-user-on-db/) - php
 * [yt-iframe-api](http://wbruno.github.io/examples/yt-iframe-api/)
 
