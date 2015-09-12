@@ -2,6 +2,7 @@
 
 ## Snippets of codes made by [wbruno](http://wbruno.com.br)
 
+* [100-with-fixed-width-column](http://wbruno.github.io/examples/100-with-fixed-width-column) - css
 * [ajax-2000ms](http://wbruno.github.io/examples/ajax-2000ms/) - ajax
 * [calc-table](http://wbruno.github.io/examples/calc-table/)
 * [calc-table-select](http://wbruno.github.io/examples/calc-table-select/)
