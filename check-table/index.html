@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf8" />
+  <link rel="stylesheet" href="../gh-fork-ribbon.css" />
+
+<style>
+#checks,
+#target { float: left; margin-right: 50px; }
+#checks label { display: block; }
+</style>
+</head>
+<body>
+
+<section id="checks">
+  <label><input type="checkbox" name="add[]" value="1" />Primeiro</label>
+  <label><input type="checkbox" name="add[]" value="2" />Segundo</label>
+  <label><input type="checkbox" name="add[]" value="3" />Terceiro</label>
+  <label><input type="checkbox" name="add[]" value="4" />Quarto</label>
+  <label><input type="checkbox" name="add[]" value="5" />Quinto</label>
+  <label><input type="checkbox" name="add[]" value="6" />Sexto</label>
+  <label><input type="checkbox" name="add[]" value="7" />Sétimo</label>
+  <label><input type="checkbox" name="add[]" value="8" />Oitavo</label>
+  <label><input type="checkbox" name="add[]" value="9" />Novo</label>
+  <label><input type="checkbox" name="add[]" value="10" />Décimo</label>
+</section>
+
+
+<table id="target" border="1">
+  <thead>
+    <tr>
+      <td>ID</td>
+      <td>Palavra</td>
+    </tr>
+  </thead>
+  <tbody></tbody>
+</table>
+
+
+<script type="text/javascript">
+var checks = document.querySelectorAll('#checks input[type="checkbox"]'),
+    $checks = [].slice.call(checks),
+    $target = document.querySelector('#target tbody');
+
+$checks.forEach(function($check) {
+  $check.addEventListener('click', function(event) {
+    $target.innerHTML = draw().join('');
+  });
+});
+
+function draw() {
+  var html = $checks.map(function($check) {
+    if ($check.checked) {
+      var label = $check.parentNode.textContent;
+      return '<tr><td>' + $check.value +'</td><td>' + label + '</td></tr>';
+    }
+  });
+  return html;
+}
+
+</script>
+
+<div class="github-fork-ribbon-wrapper right">
+  <div class="github-fork-ribbon">
+    <a href="https://github.com/wbruno/examples">Fork me on GitHub</a>
+  </div>
+</div>
+</body>
+</html>
