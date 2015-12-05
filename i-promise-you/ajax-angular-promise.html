@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="dragons">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+</head>
+<body>
+
+<script type="text/javascript" src="angular.js"></script>
+<script type="text/javascript">
+'use strict';
+var sumTypes = function(json) {
+  var arr = {};
+  json.forEach(function(e) {
+    if(!arr[e.type]) {
+      arr[e.type] = 1;
+    } else {
+      arr[e.type]++;
+    }
+  });
+  return arr;
+};
+
+var display = function(arr) {
+  console.table(arr);
+};
+
+const SERVICE = 'http://dragons-api.herokuapp.com/api/dragons';
+
+angular
+  .module('dragons',[])
+  .controller('types', ['$http', function($http) {
+    $http({
+      method: 'GET',
+      url: SERVICE
+    })
+    .then(function(response) {
+      return response.data;
+    })
+    .then(sumTypes)
+    .then(display)
+    .catch(function(err) {
+      console.log(err.statusText + ' :(');
+    });
+  }]);
+
+</script>
+
+<div ng-controller="types"></div>
+
+</body>
+</html>

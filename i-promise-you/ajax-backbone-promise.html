@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+</head>
+<body>
+
+<script type="text/javascript" src="underscore.js"></script>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="backbone.js"></script>
+<script type="text/javascript">
+'use strict';
+var sumTypes = function(json) {
+  var arr = {};
+  json.forEach(function(e) {
+    if(!arr[e.type]) {
+      arr[e.type] = 1;
+    } else {
+      arr[e.type]++;
+    }
+  });
+  return arr;
+};
+
+var display = function(arr) {
+  console.table(arr);
+};
+
+const SERVICE = 'http://dragons-api.herokuapp.com/api/dragons';
+
+var DragonModel = Backbone.Model.extend({
+    urlRoot: SERVICE
+});
+var DragonCollection = Backbone.Collection.extend({
+    model: DragonModel,
+    url: SERVICE
+});
+
+var dc = new DragonCollection()
+
+dc.fetch()
+  .then(sumTypes)
+  .then(display)
+  .fail(function(err) {
+    console.log(err.statusText + ' :(');
+  });
+
+</script>
+
+</body>
+</html>
