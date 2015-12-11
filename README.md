@@ -22,6 +22,7 @@
 * [input-img](http://wbruno.github.io/examples/input-img/)
 * [input-sum](http://wbruno.github.io/examples/input-sum/)
 * [pause-interval](http://wbruno.github.io/examples/pause-interval/)
+* [money-blur](http://wbruno.github.io/examples/money-blur/)
 * [music-slide](http://wbruno.github.io/examples/music-slide/)
 * [rotate](http://wbruno.github.io/examples/rotate/)
 * [scup](https://github.com/wbruno/examples/tree/gh-pages/scup)

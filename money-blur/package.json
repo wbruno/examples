@@ -1,0 +1,15 @@
+{
+  "name": "money-blur",
+  "version": "1.0.0",
+  "description": "",
+  "main": "money-blur.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "William Bruno <wbrunom@gmail.com> (http://wbruno.com.br)",
+  "license": "ISC",
+  "devDependencies": {
+    "mocha": "^2.3.4"
+  }
+}

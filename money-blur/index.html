@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="../gh-fork-ribbon.css" />
+  <title>Document</title>
+</head>
+<body>
+
+<h1>Money Blur</h1>
+<script type="text/javascript" src="money-blur.js"></script>
+<script type="text/javascript">
+function id(el){
+  return document.getElementById(el);
+}
+window.onload = function(){
+  id('moeda').onkeyup = function() {
+      var v = this.value;
+      v = v.replace(/[^\d,.]/, '');
+      this.value = v;
+  };
+  id('moeda').onblur = function() {
+    var v = this.value;
+    this.value = _format(v);
+  }
+};
+</script>
+<input type="text" name="moeda" id="moeda" />
+
+<div class="github-fork-ribbon-wrapper right">
+  <div class="github-fork-ribbon">
+    <a href="https://github.com/wbruno/examples">Fork me on GitHub</a>
+  </div>
+</div>
+</body>
+</html>
