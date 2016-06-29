@@ -1,0 +1,19 @@
+{
+  "name": "nodejs-in-production",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node ./bin/www",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "William B. <wbrunom@gmail.com> (http://wbruno.com.br)",
+  "license": "ISC",
+  "dependencies": {
+    "compression": "^1.6.2",
+    "debug": "^2.2.0",
+    "express": "^4.14.0",
+    "nunjucks": "^2.4.2"
+  }
+}

@@ -1,0 +1,38 @@
+#!/usr/bin/env node
+'use strict';
+
+let app   = require('../app');
+let debug = require('debug')('app:bin:www');
+let cluster = require('cluster');
+let numCPUs = require('os').cpus().length;
+
+
+let _onWorkerError = function(code, signal) {
+  debug(code, signal);
+  logger.error('worker.died', {
+    err: 'worder died',
+    code: code,
+    signal: signal
+  });
+};
+
+if (cluster.isMaster && process.env.NODE_ENV !== 'development') {
+  for (var i = 0; i < numCPUs; i++) {
+    let worker = cluster.fork();
+    worker.on('error', _onWorkerError);
+  }
+
+  cluster.on('exit', (worker, code, signal) => {
+    let newWorker = cluster.fork();
+    newWorker.on('error', _onWorkerError);
+    debug('A new worker rises', newWorker.process.pid);
+  });
+} else {
+  let server = app.listen(app.get('port'), () => {
+    debug('app started', app.get('env'))
+  });
+  server.on('error', (err) => {
+    debug(err);
+    logger.error('server.error', { err: err });
+  });
+}
