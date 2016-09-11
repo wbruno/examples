@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Click count</title>
+</head>
+<body>
+
+<button id="button-count">Count</button>
+<p id="target"></p>
+
+<script>
+var $target = document.getElementById('target'),
+    $button = document.getElementById('button-count');
+
+
+$button.addEventListener('click', function() {
+  var xhr = new XMLHttpRequest();
+  xhr.open('POST', '/count', true);
+  xhr.send();
+
+  xhr.addEventListener('readystatechange', function() {
+    if (xhr.readyState === 4 && xhr.status === 200) {
+      var json = JSON.parse(xhr.responseText);
+
+      $target.innerHTML = json.count;
+    }
+  });
+});
+</script>
+</body>
+</html>
