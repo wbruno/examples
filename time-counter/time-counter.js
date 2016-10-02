@@ -5,8 +5,7 @@
  */
 
 function _getDateEnd ($element) {
-  var dataEnd = $element.getAttribute('data-end').split('-'),
-      date = new Date(dataEnd[0], dataEnd[1]-1, dataEnd[2], dataEnd[3], dataEnd[4], dataEnd[5]);
+  var date = new Date($element.getAttribute('data-end'));
 
   return !isNaN(date) ? date : new Date();
 }
