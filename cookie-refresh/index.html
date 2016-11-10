@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="../gh-fork-ribbon.css" />
+
+  <title>Cookie refresh</title>
+</head>
+<body>
+
+
+<p id="target"></p>
+<script>
+var $target = document.getElementById('target');
+if (!/wasRefreshed/.test(document.cookie)) {
+  document.cookie = 'wasRefreshed=true';
+  setTimeout(refresh, 3000);
+  target.innerHTML = 'first time';
+} else {
+  target.innerHTML = 'second time';
+}
+
+function refresh() {
+  location.href = '';
+}
+</script>
+
+
+
+<div class="github-fork-ribbon-wrapper right">
+  <div class="github-fork-ribbon">
+    <a href="https://github.com/wbruno/examples">Fork me on GitHub</a>
+  </div>
+</div>
+</body>
+</html>
