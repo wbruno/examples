@@ -1,0 +1,275 @@
+<html>
+<head>
+<style type="text/css">
+@import url("https://fonts.googleapis.com/css?family=Martel+Sans:300,800");
+body {
+  overflow: hidden;
+  background-color: #6600d6;
+}
+h1 {
+  font-family: "Martel Sans", sans-serif;
+  font-weight: 300;
+  color: white;
+  text-align: center;
+}
+h5 {
+  font-family: "Martel Sans", sans-serif;
+  font-weight: 300;
+  text-align: center;
+  color: white;
+}
+h5 a {
+  text-decoration: none;
+  color: white;
+  transition: all 500ms;
+}
+h5 a:hover {
+  color: #cecece;
+}
+h5 span:after {
+  color: yellow;
+  content: '\f0e7';
+  font-family: FontAwesome;
+  font-weight: normal;
+}
+.open-modal {
+  height: 50px;
+  width: 150px;
+  display: block;
+  margin: 10px auto;
+  border: 1px solid white;
+  background-color: #6600d6;
+  color: white;
+  font-family: "Martel Sans", sans-serif;
+  font-weight: 800;
+  transition: 500ms;
+  cursor: pointer;
+  outline: none;
+}
+.open-modal:hover {
+  background-color: white;
+  color: #6600d6;
+}
+.modal-content {
+  font-family: "Martel Sans", sans-serif;
+  font-size: 14px;
+  background-color: white;
+  z-index: 2;
+  will-change: transform;
+  position: absolute;
+  top: 40px;
+  left: 50%;
+  margin-left: -225px;
+  width: 450px;
+  height: auto;
+  transform: scaleX(0);
+  opacity: 0;
+  border: 1px solid #cecece;
+  transition: all 300ms cubic-bezier(0.72, 0.91, 0.35, 1.2);
+}
+.modal-content .modal-header {
+  min-height: 40px;
+  padding: 20px 0px 0px 15px;
+  border-bottom: 1px solid #cecece;
+}
+.modal-content .modal-header .close-modal {
+  position: absolute;
+  padding: 10px;
+  right: 0;
+  top: -10px;
+  cursor: pointer;
+  font-size: 1.5em;
+  transition: all 500ms;
+  user-select: none;
+}
+.modal-content .modal-header .close-modal:hover {
+  transform: rotate(180deg);
+}
+.modal-content .modal-body {
+  height: 200px;
+  padding: 15px;
+  overflow: auto;
+}
+.modal-content .modal-footer {
+  height: 60px;
+  width: 100%;
+  text-align: center;
+  line-height: 4.5;
+  border-top: 1px solid #cecece;
+}
+.modal-content .modal-footer button {
+  font-family: "Martel Sans", sans-serif;
+  margin: 10px;
+  height: 35px;
+  width: 80px;
+  background-color: #6600d6;
+  color: white;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  transition: 500ms;
+}
+.modal-content .modal-footer button:hover {
+  background-color: white;
+  border: 1px solid #6600d6;
+  color: #6600d6;
+}
+
+/* Class Utils Modal*/
+.opened {
+  transform: scaleX(1) !important;
+  opacity: 1 !important;
+}
+
+.closed {
+  transform: scaleX(0) !important;
+  opacity: 0 !important;
+}
+
+/* Scrollbar Color*/
+.modal-body::-webkit-scrollbar {
+  width: .5em;
+}
+
+.modal-body::-webkit-scrollbar-track {
+  background-color: rgba(206, 206, 206, 0.5);
+}
+
+.modal-body::-webkit-scrollbar-thumb {
+  background-color: #6600d6;
+}
+
+
+</style>
+</head>
+<body>
+  <h1>MODAL WITH PURE JAVASCRIPT</h1>
+  <button class="open-modal modal-1">HOW TO USE</button>
+  <button class="open-modal modal-2">SAMPLE MODAL LOREM</button>
+
+  <!-- First Modal -->
+
+  <div class="modal-content modal_1">
+    <div class="modal-header">
+      How to use
+      <span class="close-modal">&times</span>
+    </div>
+    <div class="modal-body">
+      <h3>To show</h3>
+      <code>new Modal($b1, {
+        content: '.modal_1',
+        action: 'close'
+      });
+      </code>
+      <br/>
+      <h3>To hide</h3>
+      <code>new Modal($b1, {
+        content: '.modal_1',
+        action: 'open'
+      });
+      </code>
+      <h3>Skeleton</h3>
+      <pre>
+&ltdiv class="modal-content el"&gt
+  &ltdiv class="modal-header"&gt
+    &ltspan class="close-modal"&gt&times&lt/span&gt
+  &lt/div&gt
+  &ltdiv class="modal-body"&gt
+    ...
+  &lt/div&gt
+  &ltdiv class="modal-footer"&gt
+    &ltbutton class="close-modal"&gtClose&lt/button&gt
+    &ltbutton class="close-modal"&gtOK&lt/button&gt
+  &lt/div&gt
+&lt/div&gt
+      </pre>
+    </div>
+    <div class="modal-footer">
+      <button class="close-modal">Close</button>
+      <button class="close-modal">OK</button>
+    </div>
+  </div>
+
+  <!-- Second Modal -->
+
+  <div class="modal-content modal_2">
+  <div class="modal-header">
+    Lorem ipsum dolor sit amet
+    <span class="close-modal">&times</span>
+  </div>
+  <div class="modal-body">
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis dapibus molestie orci, nec ultricies nulla luctus dignissim. In vitae nibh eget mauris consectetur tristique. Donec ornare eleifend neque ut tincidunt. Etiam augue odio, tempus vel placerat id, imperdiet vitae justo. Fusce sit amet risus est. Vestibulum at hendrerit ante. Nunc quis augue risus. Pellentesque non turpis justo. Vestibulum porttitor erat eget egestas eleifend. Fusce nec lectus non turpis fringilla mattis in non diam
+  </div>
+  <div class="modal-footer">
+  <button class="close-modal">Close</button>
+      <button class="close-modal">OK</button>
+  </div>
+</div>
+
+  </div>
+  <h5>Made <span></span> by <a href="https://br.linkedin.com/in/gabrielferreira" target="_blank">@gabrielferreiraa</a></h5>
+
+
+<script type="text/javascript">
+;(function(window) {
+  'use strict';
+
+  function Modal($button, config) {
+    let $element = document.querySelector(config.content);
+    let $body = document.body;
+    let $btClose = $element.querySelectorAll('.close-modal');
+
+    $button.addEventListener('click', openModal, false);
+    $body.addEventListener('click', closeModal, false);
+
+    $btClose.forEach(function($btn) {
+      $btn.addEventListener('click', closeModal, false);
+    });
+
+    $element.addEventListener('click', function(event) {
+      event.stopPropagation();
+    });
+
+    document.addEventListener('keydown', function(event) {
+      if (27 === event.keyCode) {
+        closeModal(event);
+      }
+    }, false);
+
+
+    function openModal(event) {
+      event && event.stopPropagation();
+      let modal = $element.classList;
+      modal.add('opened');
+      modal.remove('closed');
+    }
+
+    function closeModal(event) {
+      event && event.stopPropagation();
+      let modal = $element.classList;
+      modal.remove('opened');
+      modal.add('closed');
+    }
+
+    this.open = openModal;
+  }
+
+  window.Modal = Modal;
+}(window));
+
+/* Plugin */
+let $b1 = document.querySelector('.modal-1');
+let $b2 = document.querySelector('.modal-2');
+
+new Modal($b1, {
+  content: '.modal_1'
+});
+
+new Modal($b2, {
+  content: '.modal_2'
+}).open();
+
+</script>
+
+</body>
+</html>
