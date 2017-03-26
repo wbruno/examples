@@ -1,0 +1,30 @@
+<script type="text/javascript">
+/**
+ * @author Locaweb
+ * @date 2012-11-21
+ */
+(function(){
+	'use strict';
+
+	var level = 0,
+	coffee = {};
+
+
+	coffee.drink = function(){
+		level++;
+		console.log('drinking coffee');
+	};
+	coffee.testLevel = function(){
+		if( level>=10 ) {
+			console.log('Hora do game!!');
+			level = 0;
+		}
+	};
+	coffee.init = function(){
+		coffee.drink();
+		coffee.testLevel();
+	};
+
+	window.setInterval( coffee.init, 10000 );	
+})();
+</script>

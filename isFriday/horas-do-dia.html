@@ -1,0 +1,31 @@
+<script type="text/javascript">
+/**
+ * @author Locaweb
+ */
+(function() {
+	/*global console: false*/
+	'use strict';
+	var today = new Date(),
+	hours = today.getHours();
+	
+	if(hours > 0 && hours < 6) {
+		console.log('O que você faz da meia noite às 6h ?');
+	} else if (hours > 6 && hours < 8) {
+		console.log('Trânsito..');
+	} else if(hours > 8 && hours < 19) {
+		console.log('Trabalhando!!');
+	} else if(hours > 19 && hours < 22 ) {
+		console.log('Hora Extra!!');
+	} else {
+		console.log('Hora do Freela!!');
+	}
+	
+})();
+</script>
+
+
+
+
+
+
+

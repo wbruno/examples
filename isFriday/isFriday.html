@@ -1,0 +1,40 @@
+<html>
+<head>
+
+	<title>isFriday</title>
+	<meta charset="utf8" />
+<script type="text/javascript">
+/*global console: false */
+(function () {
+	'use strict';
+	
+	var now = new Date(), weekday = [], day;
+
+	weekday[0] = weekday[1] = weekday[2] = weekday[3] = 'Qualquer dia';
+	weekday[4] = 'Quinta';
+	weekday[5] = 'Sexta'; weekday[6] = 'Sábado';
+
+	var waitForFriday = function() {
+		day = now.getDay();
+		if(weekday[day]!=='Sexta') {
+			if(weekday[day]==='Sábado') {
+				console.log('Sexta foi ontem!');
+			} else {
+				console.log('Falta(m) ' + ( 5 - day ) + ' dia(s) para sexta!');
+			}
+		} else {
+			console.log('Fique calmo que hoje já é sexta!!!');
+		}
+	};
+
+	waitForFriday();
+	window.setInterval(waitForFriday, 10000);
+})();
+</script>
+</head>
+<body>
+
+
+
+</body>
+</html>

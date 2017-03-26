@@ -1,0 +1,64 @@
+<!DOCTYPE HTML>
+<html lang="en-US">
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+<style type="text/css">
+/* @author Locaweb */
+.is-hidden { display: none; }
+label{ display: block; }
+</style>
+</head>
+<body>
+	<form action="" method="post">
+		<fieldset id="euvou">
+			<legend>Nesse feriado eu vou:</legend>
+			<label><input type="radio" name="euvou" value="casa" /> Ficar em casa</label>
+			<label><input type="radio" name="euvou" value="transito" /> Pegar trânsito</label>
+			<label><input type="radio" name="euvou" value="extra" /> Fazer hora extra</label>
+		</fieldset>
+
+		<fieldset id="respostas">
+			<fieldset id="casa" class="is-hidden">
+				<legend>...: </legend>
+				<label><input type="checkbox" name="opcoes[]" /> Dormindo</label>
+				<label><input type="checkbox" name="opcoes[]" /> Freelando</label>
+				<label><input type="checkbox" name="opcoes[]" /> Matando o boss do game</label>
+			</fieldset><!-- .is-hidden -->
+			<fieldset id="transito" class="is-hidden">
+				<legend>Indo para: </legend>
+				<label><input type="checkbox" name="opcoes[]" /> a praia</label>
+				<label><input type="checkbox" name="opcoes[]" /> a casa da sogra</label>
+			</fieldset><!-- .is-hidden -->
+			<fieldset id="extra" class="is-hidden">
+				<legend>Na: </legend>
+				<label><input type="checkbox" name="opcoes[]" /> Empresa</label>
+				<label><input type="checkbox" name="opcoes[]" /> Em casa</label>
+			</fieldset><!-- .is-hidden -->
+		</fieldset><!-- #respostas -->
+	</form>
+<script type="text/javascript">
+/* @author Locaweb */
+(function() {
+	'use strict';
+	var id = function(el) {
+		return document.getElementById( el );
+	};
+	var hide_all = function() {
+		var fds = id('respostas').getElementsByTagName('fieldset');
+		for( var i=0; i<fds.length; i++ ) {
+			fds[i].className = 'is-hidden';
+		}
+	};
+	var toggle = function() {
+		hide_all();
+		id( this.value ).className = '';
+	};
+	var rds = id('euvou').getElementsByTagName('input');
+	for( var i=0; i<rds.length; i++ ) {
+		rds[i].onclick = toggle;
+	}
+})();
+</script>
+</body>
+</html>

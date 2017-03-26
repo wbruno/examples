@@ -1,0 +1,37 @@
+<!DOCTYPE HTML>
+<html lang="en-US">
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+
+<script type="text/javascript">
+/*global console:false*/
+( function() {
+	'use strict';
+
+	var life = [], i = 0;
+
+
+	life[0] = 'code'; life[1] = 'code';
+	life[2] = 'coffee'; life[3] = 'code';
+	life[4] = 'coffee'; life[5] = 'lunch';
+	life[6] = 'code'; life[7] = 'coffee';
+	life[8] = 'code'; life[9] = 'code';
+	life[10] = 'coffee'; life[11] = 'code';
+	life[12] = 'coffee';
+
+
+	window.setInterval( function() {
+		console.log( life[i] );
+		i++;
+		if(i >= life.length) { i = 0; }
+		}, 1000
+	);
+})();
+</script>
+</head>
+<body>
+
+
+</body>
+</html>

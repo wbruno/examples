@@ -1,0 +1,31 @@
+<!DOCTYPE HTML>
+<html lang="en-US">
+<head>
+	<meta charset="UTF-8">
+	<title>Já terminou ?</title>
+<script type="text/javascript">
+/**
+ * @author Locaweb
+ * @date 2012-10-08
+ */
+( function() {
+	'use strict';
+	var text = '', cfm = false;
+
+	var id = function(el) {
+		return document.getElementById(el);
+	};
+
+	window.onload = function() {
+		cfm = window.confirm('Já corrigiu aquele bug que apareceu na sexta-feira, às 17h59 ?');
+		text = cfm ? 'Ok, pode pegar o próximo job então!' : 'Putz.. então Let\'s debug';
+
+		id('result').innerHTML = text;
+	};
+})();
+</script>
+</head>
+<body>
+	<p id="result"></p>
+</body>
+</html>
