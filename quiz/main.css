@@ -1,0 +1,84 @@
+* {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    border: none;
+}
+body {
+    font: normal 12px Tahoma, sans-serif;
+}
+p { margin-bottom: 15px; }
+.fleft { float: left; }
+.fright { float: right; }
+.overflow { overflow: hidden; }
+.input-text { padding: 5px; }
+.link-again { display: block; text-decoration: underline; }
+.quiz-answer { font-size: 24px; }
+.content { margin: 0 auto; }
+.column-half { width: 460px; }
+.column-five-twelfths { width: 370px; }
+.column-ten-twelfths { width: 780px; }
+.space-bottom-big { margin-bottom: 40px; }
+.space-bottom-medium { margin-bottom: 20px; }
+.space-bottom-small { margin-bottom: 10px; }
+.center { text-align: center; }
+
+.is-hidden { display: none; }
+.btn {
+    background:#EF8721;
+    color: #fff;
+    border-radius: 5px;
+    font-size: 13px;
+    text-transform: uppercase;
+    text-decoration: none;
+    text-align: center;
+}
+
+#quiz {
+    border-radius: 8px;
+    border: 1px solid #cccccc;
+    height: 400px;
+}
+#quiz-inner { padding: 30px 20px; }
+
+#quiz label { display: block; }
+
+#quiz .input-text { border: 1px solid #ccc; border-radius: 0; background: #fff; }
+
+.quiz-question {
+    font-weight: bold;
+    text-align: center;
+    padding: 20px 0;
+    height: 30px; line-height: 30px;
+}
+.quiz-pager-item {
+    border-radius: 50%;
+    background: #e6eaeb;
+    width: 40px; height: 40px; line-height: 40px;
+    text-align: center;
+    font-size: 14px;
+    margin-right: 15px;
+    position: relative;
+}
+.quiz-pager-item:first-child { margin-left: 20px; }
+.quiz-pager-item:last-child { margin-right: 0; }
+.quiz-pager-item:last-child:after { background: none; }
+
+.quiz-pager-item.is-active { background: #990000; color: #fff; }
+
+.quiz-form { padding: 0 60px; }
+.btn-quiz { width: 200px; height: 35px; line-height: 35px; display: block; cursor: pointer; }
+
+.quiz-question-item.is-active { display: block; }
+.quiz-question-item { display: none; }
+
+.quiz-form-error-msg {
+    display: none;
+    color: #b94a48;
+    background: #f2dede;
+    border: 1px solid #eed3d7;
+    font-size: 12px;
+    padding: 8px 14px;
+    border-radius: 4px;
+}
+.quiz-form-error .quiz-form-error-msg { display: block; }

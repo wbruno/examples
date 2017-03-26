@@ -1,0 +1,236 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+
+    <link rel="stylesheet" href="main.css">
+    <script src="//polyfill.io"></script>
+</head>
+<body>
+
+<section class="content column-ten-twelfths space-bottom-big" id="quiz">
+    <div id="quiz-inner">
+        <ol class="overflow space-bottom-medium column-half content" id="quiz-pager">
+            <li class="fleft quiz-pager-item is-active">1</li>
+            <li class="fleft quiz-pager-item">2</li>
+            <li class="fleft quiz-pager-item">3</li>
+            <li class="fleft quiz-pager-item">4</li>
+            <li class="fleft quiz-pager-item">5</li>
+            <li class="fleft quiz-pager-item">6</li>
+            <li class="fleft quiz-pager-item">7</li>
+            <li class="fleft quiz-pager-item">8</li>
+        </ol><!-- #quiz-pager -->
+
+
+        <ul id="quiz-questions">
+            <li class="quiz-question-item is-active">
+
+                <p class="quiz-question">Qual meu perfil como FrontEnd ?</p>
+                <form id="quiz-form-user" class="quiz-form column-half content" method="" action="">
+                    <fieldset>
+                        <label class="overflow space-bottom-small">
+                            <span class="fleft">Nome: </span>
+                            <input type="text" class="input-text fright column-five-twelfths" value="" name="name">
+                        </label>
+                        <label class="overflow space-bottom-medium">
+                            <span class="fleft">E-mail: </span>
+                            <input type="email" class="input-text fright column-five-twelfths" value="" name="email">
+                        </label>
+
+                        <p class="quiz-form-error-msg">Preencha os seus dados corretamente</p>
+
+                        <label class="overflow space-bottom-small">
+                            <input type="submit" class="btn btn-quiz content" value="Acesse a pesquisa" name="send">
+                        </label>
+                    </fieldset>
+                </form>
+            </li><!-- .quiz-question-item -->
+            <li class="quiz-question-item">
+                <p class="quiz-question">Você usa o jslint sempre ?</p>
+                <form class="quiz-form quiz-form-radios" method="" action="">
+                    <fieldset>
+                        <label class="space-bottom-small">
+                            <input type="radio" class="input-radio" value="3" name="quiz2">
+                            <span>Sim</span>
+                        </label>
+                        <label class="space-bottom-medium">
+                            <input type="radio" class="input-radio" value="0" name="quiz2">
+                            <span>Não</span>
+                        </label>
+
+                        <p class="quiz-form-error-msg">Responda com uma das opções</p>
+
+                        <label class="overflow space-bottom-small">
+                            <input type="submit" class="btn btn-quiz content" value="Próxima" name="">
+                        </label>
+                    </fieldset>
+                </form>
+            </li><!-- .quiz-question-item -->
+            <li class="quiz-question-item">
+
+                <p class="quiz-question">Qual você prefere ?</p>
+                <form class="quiz-form quiz-form-radios" method="" action="">
+                    <fieldset>
+                        <label class="space-bottom-small">
+                            <input type="radio" class="input-radio" value="0" name="quiz3">
+                            <span>jQuery</span>
+                        </label>
+                        <label class="space-bottom-medium">
+                            <input type="radio" class="input-radio" value="3" name="quiz3">
+                            <span>VanillaJS</span>
+                        </label>
+
+                        <p class="quiz-form-error-msg">Responda com uma das opções</p>
+
+                        <label class="overflow space-bottom-small">
+                            <input type="submit" class="btn btn-quiz content" value="Próxima" name="">
+                        </label>
+                    </fieldset>
+                </form>
+            </li><!-- .quiz-question-item -->
+            <li class="quiz-question-item">
+                <p class="quiz-question">Sabe programar em alguma linguagem ?</p>
+
+                <form class="quiz-form quiz-form-radios" method="" action="">
+                    <fieldset>
+                        <label class="space-bottom-medium">
+                            <input type="radio" class="input-radio" value="3" name="quiz4">
+                            <span>(PHP|Python|Java(Script)?|Outras)</span>
+                        </label>
+                        <label class="space-bottom-medium">
+                            <input type="radio" class="input-radio" value="1" name="quiz4">
+                            <span>jQuery</span>
+                        </label>
+                        <label class="space-bottom-medium">
+                            <input type="radio" class="input-radio" value="0" name="quiz4">
+                            <span>Nenhuma</span>
+                        </label>
+
+                        <p class="quiz-form-error-msg">Responda com uma das opções</p>
+
+                        <label class="overflow space-bottom-small">
+                            <input type="submit" class="btn btn-quiz content" value="Próxima" name="">
+                        </label>
+                    </fieldset>
+                </form>
+            </li><!-- .quiz-question-item -->
+            <li class="quiz-question-item">
+
+                <p class="quiz-question">Entendeu a expressão regular da página anterior ?</p>
+                <form class="quiz-form quiz-form-radios" method="" action="">
+                    <fieldset>
+                        <label class="space-bottom-medium">
+                            <input type="radio" class="input-radio" value="0" name="quiz5">
+                            <span>Não sei oque é isso</span>
+                        </label>
+                        <label class="space-bottom-medium">
+                            <input type="radio" class="input-radio" value="3" name="quiz5">
+                            <span>Entendi, (PHP|Python|Java(Script)?|outras) = PHP ou Python ou Java ou Javascript ou outras</span>
+                        </label>
+                        <label class="space-bottom-medium">
+                            <input type="radio" class="input-radio" value="1" name="quiz5">
+                            <span>Entendi, (PHP|Python|Java(Script)?|outras) = PHP, Python, Javascript e outras</span>
+                        </label>
+
+                        <p class="quiz-form-error-msg">Responda com uma das opções</p>
+
+                        <label class="overflow space-bottom-small">
+                            <input type="submit" class="btn btn-quiz content" value="Próxima" name="">
+                        </label>
+                    </fieldset>
+                </form>
+            </li><!-- .quiz-question-item -->
+            <li class="quiz-question-item">
+
+                <p class="quiz-question">Qual controle de versão você usa ?</p>
+                <form class="quiz-form quiz-form-radios" method="" action="">
+                    <fieldset>
+                        <label class="space-bottom-medium">
+                            <input type="radio" class="input-radio" value="0" name="quiz6">
+                            <span>Dropbox</span>
+                        </label>
+                        <label class="space-bottom-medium">
+                            <input type="radio" class="input-radio" value="1" name="quiz6">
+                            <span>underline no nome do arquivo || Não mexer || FTP</span>
+                        </label>
+                        <label class="space-bottom-medium">
+                            <input type="radio" class="input-radio" value="3" name="quiz6">
+                            <span>GIT || SVN</span>
+                        </label>
+
+                        <p class="quiz-form-error-msg">Responda com uma das opções</p>
+
+                        <label class="overflow space-bottom-small">
+                            <input type="submit" class="btn btn-quiz content" value="Próxima" name="">
+                        </label>
+                    </fieldset>
+                </form>
+            </li><!-- .quiz-question-item -->
+            <li class="quiz-question-item">
+
+                <p class="quiz-question">Quando vc tem alguma dúvida...</p>
+                <form class="quiz-form quiz-form-radios" method=""  action="" id="quiz-form-last">
+                    <fieldset>
+                        <label class="space-bottom-medium">
+                            <input type="radio" class="input-radio" value="0" name="quiz7">
+                            <span>pergunto para um amigo ou em um fórum</span>
+                        </label>
+                        <label class="space-bottom-medium">
+                            <input type="radio" class="input-radio" value="3" name="quiz7">
+                            <span>pesquiso no google ou outro mecanismo de busca</span>
+                        </label>
+                        <label class="space-bottom-medium">
+                            <input type="radio" class="input-radio" value="2" name="quiz7">
+                            <span>procuro perguntas semelhantes em fóruns/grupos/comunidades</span>
+                        </label>
+
+                        <p class="quiz-form-error-msg">Responda com uma das opções</p>
+
+                        <label class="overflow space-bottom-small">
+                            <input type="submit" class="btn btn-quiz content" value="Próxima" name="">
+                        </label>
+                    </fieldset>
+                </form>
+            </li><!-- .quiz-question-item -->
+            <li class="quiz-question-item">
+                <p class="quiz-question">Bacana, suas respostas te levam a</p>
+
+                <div class="quiz-answer-product is-hidden" id="quiz-answer-1">
+                    <p class="space-bottom-big center quiz-answer">Virgem</p>
+                    <a class="btn btn-quiz content space-bottom-medium" href="http://wbruno.com.br/javascript-puro/programando-orientado-eventos-quiz-em-multipassos/">Ver mais informações</a>
+                </div><!-- #quiz-answer-1 -->
+                <div class="quiz-answer-product is-hidden" id="quiz-answer-2">
+                    <p class="space-bottom-big center quiz-answer">Programador</p>
+                    <a class="btn btn-quiz content space-bottom-medium" href="http://wbruno.com.br/javascript-puro/programando-orientado-eventos-quiz-em-multipassos/">Ver mais informações</a>
+                </div><!-- #quiz-answer-2 -->
+                <div class="quiz-answer-product is-hidden" id="quiz-answer-3">
+                    <p class="space-bottom-big center quiz-answer">Desenvolvedor Markup</p>
+                    <a class="btn btn-quiz content space-bottom-medium" href="http://wbruno.com.br/javascript-puro/programando-orientado-eventos-quiz-em-multipassos/">Ver mais informações</a>
+                </div><!-- #quiz-answer-3 -->
+                <div class="quiz-answer-product is-hidden" id="quiz-answer-4">
+                    <p class="space-bottom-big center quiz-answer">Sobrinho</p>
+                    <a class="btn btn-quiz content space-bottom-medium" href="http://wbruno.com.br/javascript-puro/programando-orientado-eventos-quiz-em-multipassos/">Ver mais informações</a>
+                </div><!-- #quiz-answer-4 -->
+
+                <a class="center link-again" href="#">Responder novamente</a>
+            </li><!-- .quiz-question-item -->
+        </ul><!-- #quiz-questions -->
+    </div><!-- #quiz-inner -->
+</section>
+
+
+<script src="all.js"></script>
+
+<script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-7671312-4']);
+  _gaq.push(['_trackPageview']);
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+</script>
+</body>
+</html>
