@@ -1,0 +1,9 @@
+AddType application/x-httpd-php html
+
+
+RewriteEngine On
+
+RewriteCond %{HTTP_HOST} ^www\.URL_DO_SITE\.com\.br$
+RewriteRule (.*) http://URL_DO_SITE.com.br/$1 [R=301,L]
+
+ErrorDocument 404 /404.html

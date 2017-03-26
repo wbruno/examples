@@ -1,0 +1,21 @@
+* { margin: 0; padding: 0; list-style: none; border: none; }
+
+html, body { height: 100%; }
+body,
+input, select, textarea { font: normal 20px Tahoma, sans-serif; color: #444; }
+
+body { min-width: 300px; background: #fff; }
+
+h1, h2, h3, h4, h5, h6 { line-height: 1em; margin-bottom: 15px; }
+
+
+a { text-decoration: none; }
+a:hover { text-decoration: underline; }
+p { margin-bottom: 25px; line-height: 1.4em; }
+
+*::selection { background: #722872; color: #fff; }
+*::-moz-selection { background: #722872; color: #fff; }
+
+.title { font-family: Tahoma, sans-serif; font-weight: bold; margin-bottom: 10px; }
+
+.is-hidden { display: none; }

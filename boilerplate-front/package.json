@@ -1,0 +1,22 @@
+{
+  "name": "boilerplate-front",
+  "version": "0.1.0",
+  "description": "BoilerPlate Front",
+  "homepage": "http://wbruno.com.br",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "main": "",
+  "devDependencies": {
+    "grunt": "~0.4.2",
+    "grunt-contrib-uglify": "~0.3.2",
+    "grunt-contrib-cssmin": "~0.7.0",
+    "grunt-contrib-watch": "~0.5.3"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:wbruno/boilerplate-front.git"
+  },
+  "author": "William Bruno",
+  "license": "ISC"
+}
